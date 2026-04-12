@@ -4,6 +4,7 @@ import { PacketRouter } from '../network/packetRouter';
 import { UserAccount, Character } from '../database/Database';
 import { JsonAdapter } from '../database/JsonAdapter';
 import { DebugLogger } from './Debug';
+import type { DungeonRunStats } from './DungeonRunStats';
 import { LevelConfig } from './LevelConfig';
 
 const db = new JsonAdapter();
@@ -153,6 +154,7 @@ export class Client {
     public knownEntityIds: Set<number> = new Set();
     public pendingLoot: Map<number, PendingLootDrop> = new Map();
     public processedRewardSources: Set<string> = new Set();
+    public dungeonRun: DungeonRunStats | null = null;
     public pendingMissionTurnIns: Set<number> = new Set();
     public authoritativeMaxHp: number = 100;
     public authoritativeCurrentHp: number = 100;
@@ -161,6 +163,7 @@ export class Client {
     public keepTutorialState: KeepTutorialState | null = null;
     public goblinRiverBossIntroLockUntil: number = 0;
     public goblinRiverBossIntroUnlockTimer: NodeJS.Timeout | null = null;
+    public forcedDungeonCompletionScope: string = "";
 
     constructor(socket: net.Socket, router: PacketRouter) {
         this.socket = socket;
@@ -300,6 +303,7 @@ export class Client {
         this.knownEntityIds.clear();
         this.pendingLoot.clear();
         this.processedRewardSources.clear();
+        this.dungeonRun = null;
         this.pendingMissionTurnIns.clear();
         this.authoritativeMaxHp = 100;
         this.authoritativeCurrentHp = 100;
@@ -312,6 +316,7 @@ export class Client {
             this.goblinRiverBossIntroUnlockTimer = null;
         }
         this.goblinRiverBossIntroLockUntil = 0;
+        this.forcedDungeonCompletionScope = "";
     }
 
     private clearIdentityState(): void {

@@ -8,6 +8,7 @@ import { Entity, EntityProps, EntityState } from '../core/Entity';
 import { LevelConfig } from '../core/LevelConfig';
 import { PetHandler } from './PetHandler';
 import { BuildingHandler } from './BuildingHandler';
+import { noteDungeonRunBossCutscene, noteDungeonRunEntitySeen } from '../core/DungeonRunStats';
 import { areClientsInSameParty, getPartyIdForClient, isClientPartyLeader, sharesRoomIds } from '../core/PartySync';
 import { areClientsInSameLevelScope, getClientLevelScope, getLevelScopeKey } from '../core/LevelScope';
 
@@ -49,12 +50,33 @@ export class EntityHandler {
         'GoblinRiverDungeon',
         'GoblinRiverDungeonHard'
     ]);
+    private static craftTownTutorialHelperIdsCache: Set<number> | null = null;
 
     private static normalizeIdentityName(value: unknown): string {
         return String(value ?? '')
             .trim()
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, '');
+    }
+
+    private static getCraftTownTutorialAuthoredHelperIds(): Set<number> {
+        if (EntityHandler.craftTownTutorialHelperIdsCache) {
+            return new Set(EntityHandler.craftTownTutorialHelperIdsCache);
+        }
+
+        const helperIds = new Set<number>(
+            NpcLoader.getRawNpcsForLevel('CraftTownTutorial')
+                .filter((npc) =>
+                    String(npc?.name ?? '') === 'GoblinDagger' &&
+                    String(npc?.DramaAnim ?? '') === 'Board' &&
+                    Number(npc?.team ?? 0) === 2
+                )
+                .map((npc) => Number(npc.id ?? 0))
+                .filter((id) => id > 0)
+        );
+
+        EntityHandler.craftTownTutorialHelperIdsCache = helperIds;
+        return new Set(helperIds);
     }
 
     private static usesClientSpawn(levelName: string): boolean {
@@ -803,6 +825,7 @@ export class EntityHandler {
             }
             other.send(0xAC, payload);
         }
+        noteDungeonRunBossCutscene(scopeKey, roomId, bossId);
     }
 
     private static sendRoomSound(
@@ -1029,6 +1052,9 @@ export class EntityHandler {
         }
 
         if (entityName === 'GoblinDagger' && dramaAnim === 'Board') {
+            if (!EntityHandler.getCraftTownTutorialAuthoredHelperIds().has(entityId)) {
+                return;
+            }
             if (!state.helperEntityIds.includes(entityId)) {
                 state.helperEntityIds.push(entityId);
             }
@@ -1267,6 +1293,7 @@ export class EntityHandler {
         }
 
         client.entities.set(entityId, props);
+        noteDungeonRunEntitySeen(client, entityId, props);
         EntityHandler.rememberEntityKnown(client, levelName, props);
 
         // Update GlobalState
@@ -1329,6 +1356,7 @@ export class EntityHandler {
             if (entityProps?.isPlayer) continue;
             if (entityProps?.clientSpawned) continue;
             client.entities.set(id, { ...entityProps });
+            noteDungeonRunEntitySeen(client, id, entityProps);
             EntityHandler.sendEntity(client, entityProps);
         }
     }

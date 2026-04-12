@@ -29,12 +29,6 @@ export class NpcHandler {
     private static readonly RETURN_DIALOGUE_BASE_MS = 10;
     private static readonly RETURN_DIALOGUE_CHAR_MS = 1;
     private static readonly DEFAULT_TURN_IN_STARS = 3;
-    private static readonly DELAYED_FOLLOWUP_TURN_INS = new Set<number>([
-        MissionID.MeetTheTown,
-        MissionID.FindAnnasFather,
-        MissionID.KillNephit,
-        MissionID.SlayTheDragon
-    ]);
     private static readonly DEFAULT_DIALOGUE_LANGUAGE = 'en';
 
     static async handleTalkToNpc(client: Client, data: Buffer): Promise<void> {
@@ -95,6 +89,11 @@ export class NpcHandler {
                         missionId,
                         initialState
                     );
+                    NpcHandler.resetQuestTrackerForStartedDungeonMission(
+                        client.character,
+                        missionDef,
+                        initialState
+                    );
                     NpcHandler.sendMissionAdded(client, missionId, initialState);
                     didMutate = true;
                 } else if (
@@ -142,21 +141,6 @@ export class NpcHandler {
                         // Сохраняем прогресс
                         if (client.userId) {
                             await db.saveCharacters(client.userId, client.characters);
-                        }
-
-                        if (NpcHandler.shouldAutoAcceptFollowupMission(missionId)) {
-                            const followupMissionId = NpcHandler.autoAcceptFollowupMission(
-                                client.character,
-                                missionNpcKey,
-                                missionId
-                            );
-                            if (followupMissionId) {
-                                NpcHandler.sendMissionAdded(
-                                    client,
-                                    followupMissionId,
-                                    NpcHandler.getMissionState(client.character, followupMissionId)
-                                );
-                            }
                         }
 
                         didMutate = true;
@@ -219,17 +203,12 @@ export class NpcHandler {
             const state = NpcHandler.getMissionState(character, missionId);
             const contactKey = NpcHandler.normalizeMissionNpcKey(missionDef.ContactName ?? '');
             const returnKey = NpcHandler.normalizeMissionNpcKey(missionDef.ReturnName ?? '');
-            const isDungeonMission = Boolean(String(missionDef.Dungeon ?? '').trim());
-
             let priority = 0;
             let dialogueId = 0;
 
             if (
                 npcKey === returnKey &&
-                (
-                    state === NpcHandler.MISSION_READY_TO_TURN_IN ||
-                    (state === NpcHandler.MISSION_IN_PROGRESS && !isDungeonMission)
-                )
+                state === NpcHandler.MISSION_READY_TO_TURN_IN
             ) {
                 priority = 4;
                 dialogueId = 4;
@@ -267,48 +246,6 @@ export class NpcHandler {
         }
 
         return best ? { missionId: best.missionId, dialogueId: best.dialogueId, state: best.state } : null;
-    }
-
-    private static autoAcceptFollowupMission(
-        character: Character,
-        npcKey: string,
-        excludeMissionId: number
-    ): number {
-        for (let missionId = 1; missionId <= MissionLoader.getTotalMissions(); missionId++) {
-            if (missionId === excludeMissionId) {
-                continue;
-            }
-
-            const missionDef = MissionLoader.getMissionDef(missionId);
-            if (!missionDef) {
-                continue;
-            }
-
-            if (NpcHandler.getMissionState(character, missionId) !== NpcHandler.MISSION_NOT_STARTED) {
-                continue;
-            }
-
-            if (NpcHandler.normalizeMissionNpcKey(missionDef.ContactName ?? '') !== npcKey) {
-                continue;
-            }
-
-            if (!NpcHandler.canStartMission(character, missionDef)) {
-                continue;
-            }
-
-            NpcHandler.setMissionState(
-                character,
-                missionId,
-                NpcHandler.getInitialMissionState(missionDef)
-            );
-            return missionId;
-        }
-
-        return 0;
-    }
-
-    private static shouldAutoAcceptFollowupMission(missionId: number): boolean {
-        return !NpcHandler.DELAYED_FOLLOWUP_TURN_INS.has(missionId);
     }
 
     private static canStartMission(character: Character, missionDef: MissionDef): boolean {
@@ -365,6 +302,22 @@ export class NpcHandler {
         return NpcHandler.missionStartsReadyToTurnIn(missionDef)
             ? NpcHandler.MISSION_READY_TO_TURN_IN
             : NpcHandler.MISSION_IN_PROGRESS;
+    }
+
+    private static resetQuestTrackerForStartedDungeonMission(
+        character: Character,
+        missionDef: MissionDef | undefined,
+        state: number
+    ): void {
+        if (state !== NpcHandler.MISSION_IN_PROGRESS) {
+            return;
+        }
+
+        if (!String(missionDef?.Dungeon ?? '').trim()) {
+            return;
+        }
+
+        character.questTrackerState = 0;
     }
 
     private static getMissionStateMap(character: Character): Record<string, MissionEntry> {

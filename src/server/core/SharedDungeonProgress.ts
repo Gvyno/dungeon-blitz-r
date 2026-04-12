@@ -1,15 +1,21 @@
 import { GlobalState, SharedDungeonProgressState } from './GlobalState';
+import { getActiveDungeonRunStats } from './DungeonRunStats';
 import { LevelConfig } from './LevelConfig';
 import { getClientLevelScope, getScopeLevelName } from './LevelScope';
-import { getPartyLeaderCharacterKeyForClient } from './PartySync';
+import { getClientCharacterKey, getPartyLeaderCharacterKeyForClient } from './PartySync';
 import { normalizeCharacterKey } from './SocialState';
-import { EntityState } from './Entity';
+import {
+    isWolfsEndDungeonLevel,
+    isDungeonStatsDefeated,
+    isDungeonStatsHostile
+} from './WolfsEndDungeonStatsPolicy';
 
-const SHARED_DUNGEON_PROGRESS_LEVELS = new Set<string>([
-    'GoblinRiverDungeon',
-    'GoblinRiverDungeonHard'
-]);
 const GOBLIN_RIVER_INITIAL_PROGRESS = 11;
+const SHARED_DUNGEON_PROGRESS_EXCLUDED_LEVELS = new Set<string>([
+    'TutorialBoat',
+    'TutorialDungeon',
+    'TutorialDungeonHard'
+]);
 
 function normalizeAuthorityToken(value: unknown): number {
     const token = Number(value ?? 0);
@@ -27,7 +33,21 @@ function clampProgress(value: unknown): number {
 
 export function usesSharedDungeonProgress(levelName: string | null | undefined): boolean {
     const normalizedLevel = LevelConfig.normalizeLevelName(levelName);
-    return Boolean(normalizedLevel) && SHARED_DUNGEON_PROGRESS_LEVELS.has(normalizedLevel);
+    return Boolean(normalizedLevel) &&
+        !SHARED_DUNGEON_PROGRESS_EXCLUDED_LEVELS.has(normalizedLevel) &&
+        isWolfsEndDungeonLevel(normalizedLevel);
+}
+
+export function getSharedDungeonInitialProgress(levelName: string | null | undefined): number {
+    const normalizedLevel = LevelConfig.normalizeLevelName(levelName);
+    if (
+        normalizedLevel === 'GoblinRiverDungeon' ||
+        normalizedLevel === 'GoblinRiverDungeonHard'
+    ) {
+        return GOBLIN_RIVER_INITIAL_PROGRESS;
+    }
+
+    return 0;
 }
 
 export function getSharedDungeonProgressState(
@@ -67,28 +87,58 @@ export function getOrCreateSharedDungeonProgressState(
         progress: 0,
         authorityToken: 0,
         trackedHostileIds: new Set<number>(),
-        defeatedHostileIds: new Set<number>()
+        defeatedHostileIds: new Set<number>(),
+        liveStatsByCharacter: new Map()
     };
     GlobalState.levelQuestProgress.set(scopeKey, created);
     return created;
 }
 
+function refreshSharedDungeonLiveStats(
+    state: SharedDungeonProgressState,
+    levelScope: string
+): void {
+    state.liveStatsByCharacter ??= new Map();
+    state.liveStatsByCharacter.clear();
+
+    for (const session of GlobalState.sessionsByToken.values()) {
+        if (!session?.playerSpawned || getClientLevelScope(session) !== levelScope) {
+            continue;
+        }
+
+        const characterKey = getClientCharacterKey(session);
+        if (!characterKey) {
+            continue;
+        }
+
+        const runStats = getActiveDungeonRunStats(session);
+        const scoreSummary = runStats?.scoreSummary;
+        if (!runStats || !scoreSummary) {
+            continue;
+        }
+
+        state.liveStatsByCharacter.set(characterKey, {
+            updatedAt: Date.now(),
+            levelName: runStats.levelName,
+            scoreMode: runStats.scoreMode,
+            totalScore: scoreSummary.finalStat.total,
+            kills: scoreSummary.finalStat.kills,
+            treasure: scoreSummary.finalStat.treasure,
+            accuracy: scoreSummary.finalStat.accuracy,
+            deaths: scoreSummary.finalStat.deaths,
+            timeBonus: scoreSummary.finalStat.timeBonus,
+            resultBar: scoreSummary.resultBar,
+            rank: scoreSummary.rank
+        });
+    }
+}
+
 function isSharedDungeonTrackedHostile(entity: any): boolean {
-    if (!entity || entity.isPlayer) {
-        return false;
-    }
-
-    if (!entity.clientSpawned || Number(entity.team ?? 0) !== 2) {
-        return false;
-    }
-
-    return true;
+    return Boolean(entity?.clientSpawned) && isDungeonStatsHostile(entity);
 }
 
 function isEntityDefeated(entity: any): boolean {
-    return Boolean(entity?.dead) ||
-        Number(entity?.hp ?? 1) <= 0 ||
-        Number(entity?.entState ?? 0) === EntityState.DEAD;
+    return isDungeonStatsDefeated(entity);
 }
 
 export function resolveSharedDungeonProgressAuthorityToken(levelScope: string | null | undefined): number {
@@ -243,22 +293,26 @@ export function getSharedDungeonProgressTotals(
 
 export function recomputeSharedDungeonProgress(levelScope: string | null | undefined): SharedDungeonProgressState | null {
     const state = getOrCreateSharedDungeonProgressState(levelScope);
-    if (!state) {
+    const scopeKey = String(levelScope ?? '').trim();
+    if (!state || !scopeKey) {
         return null;
     }
 
     const totals = getSharedDungeonProgressTotals(levelScope);
     const levelName = getScopeLevelName(levelScope);
     if (usesSharedDungeonProgress(levelName)) {
+        const initialProgress = getSharedDungeonInitialProgress(levelName);
         state.progress = totals.total > 0
-            ? clampProgress(GOBLIN_RIVER_INITIAL_PROGRESS + ((totals.defeated / totals.total) * (100 - GOBLIN_RIVER_INITIAL_PROGRESS)))
-            : GOBLIN_RIVER_INITIAL_PROGRESS;
+            ? clampProgress(initialProgress + ((totals.defeated / totals.total) * (100 - initialProgress)))
+            : initialProgress;
+        refreshSharedDungeonLiveStats(state, scopeKey);
         return state;
     }
 
     state.progress = totals.total > 0
         ? clampProgress((totals.defeated / totals.total) * 100)
         : 0;
+    refreshSharedDungeonLiveStats(state, scopeKey);
     return state;
 }
 

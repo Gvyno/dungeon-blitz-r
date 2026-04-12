@@ -10,6 +10,13 @@ import { BitReader } from '../network/protocol/bitReader';
 import { LevelConfig } from '../core/LevelConfig';
 import { GlobalState, PendingTransfer } from '../core/GlobalState';
 import { DebugLogger } from '../core/Debug';
+import {
+    cloneDungeonRunStats,
+    finalizeDungeonRun,
+    noteDungeonRunBossCutscene,
+    noteDungeonRunCompletionProgress,
+    noteDungeonRunEntitySeen
+} from '../core/DungeonRunStats';
 import { WorldEnter } from '../utils/WorldEnter';
 import { Config } from '../core/config';
 import { MissionLoader } from '../data/MissionLoader';
@@ -24,7 +31,10 @@ import { normalizeCharacterKey, PendingTeleport } from '../core/SocialState';
 import { TransferTokenAllocator } from '../core/TransferTokenAllocator';
 import { areClientsInSameParty, getPartyIdForClient, sharesRoomIds } from '../core/PartySync';
 import {
+    getSharedDungeonInitialProgress,
     getOrCreateSharedDungeonProgressState,
+    getSharedDungeonProgressState,
+    getSharedDungeonProgressTotals,
     hasSharedDungeonProgressHostiles,
     recomputeSharedDungeonProgress,
     resolveSharedDungeonProgressAuthorityToken,
@@ -64,11 +74,31 @@ export class LevelHandler {
     private static readonly GOBLIN_RIVER_INITIAL_PROGRESS = 11;
     private static readonly TUTORIAL_DUNGEON_INITIAL_PROGRESS = 11;
     private static readonly KEEP_TUTORIAL_HELPER_RESPAWN_DELAY_MS = 1200;
+    private static craftTownTutorialHelperIdsCache: number[] | null = null;
     private static readonly GOBLIN_RIVER_BOSS_INTRO_TEXTS = new Set<string>([
         "You're the one that killed our Kraken!",
         'That was the last of our Monster Fleet!'
     ]);
     private static readonly GOBLIN_RIVER_BOSS_INTRO_DEFAULT_MS = 5000;
+
+    private static getCraftTownTutorialAuthoredHelperIds(): number[] {
+        if (LevelHandler.craftTownTutorialHelperIdsCache) {
+            return [...LevelHandler.craftTownTutorialHelperIdsCache];
+        }
+
+        const helperIds = NpcLoader.getRawNpcsForLevel('CraftTownTutorial')
+            .filter((npc) =>
+                String(npc?.name ?? '') === 'GoblinDagger' &&
+                String(npc?.DramaAnim ?? '') === 'Board' &&
+                Number(npc?.team ?? 0) === EntityTeam.ENEMY
+            )
+            .sort((left, right) => Number(left?.x ?? 0) - Number(right?.x ?? 0))
+            .map((npc) => Number(npc.id ?? 0))
+            .filter((id) => id > 0);
+
+        LevelHandler.craftTownTutorialHelperIdsCache = helperIds;
+        return [...helperIds];
+    }
 
     private static resolveTransferSourceLevel(client: Client, character: any): string {
         // Keep-clear flows intentionally preserve the safe return point in Character.CurrentLevel
@@ -99,6 +129,29 @@ export class LevelHandler {
         );
     }
 
+    private static syncTransferSourcePositionFromLiveEntity(
+        character: any,
+        sourceLevel: string,
+        entity: { x?: number; y?: number } | null | undefined
+    ): void {
+        const normalizedSourceLevel = LevelConfig.normalizeLevelName(sourceLevel);
+        if (!character || !normalizedSourceLevel || LevelConfig.isDungeonLevel(normalizedSourceLevel)) {
+            return;
+        }
+
+        const liveX = Number(entity?.x);
+        const liveY = Number(entity?.y);
+        if (!Number.isFinite(liveX) || !Number.isFinite(liveY)) {
+            return;
+        }
+
+        character.CurrentLevel = {
+            name: normalizedSourceLevel,
+            x: Math.round(liveX),
+            y: Math.round(liveY)
+        };
+    }
+
     private static cloneTransferGameplayState(target: Client, source: Client): void {
         target.character = source.character;
         target.userId = source.userId;
@@ -117,6 +170,7 @@ export class LevelHandler {
         target.syncAnchorCharacterName = String(source.syncAnchorCharacterName ?? '').trim();
         target.entities = new Map(source.entities);
         target.startedRoomEvents = new Set(source.startedRoomEvents);
+        target.dungeonRun = cloneDungeonRunStats(source.dungeonRun);
     }
 
     private static findActiveTransferSession(userId: number | null, characterName: string | null | undefined): Client | null {
@@ -692,6 +746,7 @@ export class LevelHandler {
             return 0;
         }
 
+        const previousProgress = Number(getSharedDungeonProgressState(scopeKey)?.progress ?? 0);
         const sharedState = recomputeSharedDungeonProgress(scopeKey);
         const progress = sharedState?.progress ?? 0;
         if (sharedState) {
@@ -702,7 +757,61 @@ export class LevelHandler {
         }
 
         LevelHandler.broadcastSharedDungeonQuestProgress(scopeKey, progress);
+        if (progress >= 100 && previousProgress < 100) {
+            LevelHandler.maybeAutoCompleteSharedDungeon(scopeKey, sharedState);
+        }
         return progress;
+    }
+
+    private static buildSharedDungeonAutoCompletePayload(requiredKills: number): Buffer {
+        const bb = new BitBuffer(false);
+        bb.writeMethod9(100);
+        bb.writeMethod9(0);
+        bb.writeMethod9(0);
+        bb.writeMethod9(0);
+        bb.writeMethod9(0);
+        bb.writeMethod9(0);
+        bb.writeMethod9(0);
+        bb.writeMethod9(Math.max(1, requiredKills));
+        bb.writeMethod9(3);
+        return bb.toBuffer();
+    }
+
+    private static maybeAutoCompleteSharedDungeon(levelScope: string, sharedState: any): void {
+        if (!sharedState || sharedState.completionRequested) {
+            return;
+        }
+
+        let authorityClient: Client | null = null;
+        const authorityToken = Number(sharedState.authorityToken ?? 0);
+        if (authorityToken > 0) {
+            const authoritySession = GlobalState.sessionsByToken.get(authorityToken);
+            if (authoritySession?.playerSpawned && getClientLevelScope(authoritySession) === levelScope) {
+                authorityClient = authoritySession;
+            }
+        }
+
+        if (!authorityClient) {
+            for (const other of GlobalState.sessionsByToken.values()) {
+                if (other.playerSpawned && getClientLevelScope(other) === levelScope) {
+                    authorityClient = other;
+                    break;
+                }
+            }
+        }
+
+        if (!authorityClient?.character || authorityClient.dungeonRun?.finalizedAt) {
+            return;
+        }
+
+        sharedState.completionRequested = true;
+        const requiredKills = Math.max(1, getSharedDungeonProgressTotals(levelScope).total);
+        void MissionHandler.handleSetLevelComplete(
+            authorityClient,
+            LevelHandler.buildSharedDungeonAutoCompletePayload(requiredKills)
+        ).then(() => {
+            recomputeSharedDungeonProgress(levelScope);
+        });
     }
 
     static syncSharedDungeonQuestProgressState(client: Client): void {
@@ -732,8 +841,7 @@ export class LevelHandler {
 
     static shouldSkipDungeonRoomProgressSync(levelName: string | null | undefined): boolean {
         const normalizedLevel = LevelConfig.normalizeLevelName(levelName);
-        return normalizedLevel === 'GoblinRiverDungeon' ||
-            normalizedLevel === 'GoblinRiverDungeonHard' ||
+        return usesSharedDungeonProgress(normalizedLevel) ||
             normalizedLevel === 'TutorialDungeon';
     }
 
@@ -751,7 +859,7 @@ export class LevelHandler {
 
         client.currentRoomId = 0;
         client.startedRoomEvents.clear();
-        client.character.questTrackerState = LevelHandler.GOBLIN_RIVER_INITIAL_PROGRESS;
+        client.character.questTrackerState = getSharedDungeonInitialProgress(client.currentLevel);
     }
 
     private static shouldClampTutorialDungeonToIntroProgress(client: Client): boolean {
@@ -781,6 +889,7 @@ export class LevelHandler {
             }
             other.send(0xAC, payload);
         }
+        noteDungeonRunBossCutscene(scopeKey, roomId, bossId);
     }
 
     private static sendRoomSound(
@@ -1032,9 +1141,11 @@ export class LevelHandler {
                 if (!client.entities.has(entityId)) {
                     const bossProps = { ...entity, clientSpawned: false };
                     client.entities.set(entityId, bossProps);
+                    noteDungeonRunEntitySeen(client, entityId, bossProps);
                     EntityHandler.sendEntity(client, bossProps);
                 } else {
                     client.entities.set(entityId, entity);
+                    noteDungeonRunEntitySeen(client, entityId, entity);
                 }
                 LevelHandler.markCraftTownTutorialBossSeen(client, entityId, 'fallback');
                 return entityId;
@@ -1056,6 +1167,7 @@ export class LevelHandler {
         };
 
         client.entities.set(boss.id, boss);
+        noteDungeonRunEntitySeen(client, boss.id, boss);
         levelMap.set(boss.id, boss);
         EntityHandler.sendEntity(client, boss);
         LevelHandler.markCraftTownTutorialBossSeen(client, boss.id, 'fallback');
@@ -1220,6 +1332,7 @@ export class LevelHandler {
         bossId: number | null;
         helperIds: number[];
     } {
+        const authoredHelperIds = new Set(LevelHandler.getCraftTownTutorialAuthoredHelperIds());
         let bossId: number | null = null;
         let bossDistance = Number.POSITIVE_INFINITY;
         let lastGuyId: number | null = null;
@@ -1246,7 +1359,7 @@ export class LevelHandler {
                 continue;
             }
 
-            if (entityName === 'GoblinDagger' && dramaAnim === 'Board') {
+            if (entityName === 'GoblinDagger' && dramaAnim === 'Board' && authoredHelperIds.has(entityId)) {
                 helperCandidates.push({ x: entityX, id: entityId });
                 continue;
             }
@@ -1353,7 +1466,14 @@ export class LevelHandler {
             }
         }
 
-        LevelHandler.mergeCraftTownTutorialHelperIds(state, levelMap, rawEncounter.helperIds);
+        if (rawEncounter.helperIds.length > 0) {
+            // Prefer the canonical keep-tutorial helper set from the authored NPC data.
+            // Client-spawn tracking can surface transient boarded goblins with unstable IDs,
+            // and promoting those into the recovery wave can crash the client LinkUpdater flow.
+            state.helperEntityIds = [...rawEncounter.helperIds];
+        } else {
+            LevelHandler.mergeCraftTownTutorialHelperIds(state, levelMap, rawEncounter.helperIds);
+        }
     }
 
     private static sendNearestCraftTownTutorialParrotSkit(client: Client): void {
@@ -1405,6 +1525,7 @@ export class LevelHandler {
                 continue;
             }
             client.entities.set(entityId, { ...entity });
+            noteDungeonRunEntitySeen(client, entityId, entity);
             EntityHandler.sendEntity(client, entity);
             sentCount++;
         }
@@ -1795,6 +1916,11 @@ export class LevelHandler {
             return;
         }
 
+        const authoredHelperIds = new Set(LevelHandler.getCraftTownTutorialAuthoredHelperIds());
+        if (authoredHelperIds.size > 0) {
+            state.helperEntityIds = state.helperEntityIds.filter((helperId) => authoredHelperIds.has(helperId));
+        }
+
         LevelHandler.pruneCraftTownTutorialActiveHelperIds(client, state);
         if (state.helperWaveActiveIds.length > 0) {
             return;
@@ -1840,6 +1966,7 @@ export class LevelHandler {
 
             const helperSnapshot = { ...helper };
             client.entities.set(helperId, helperSnapshot);
+            noteDungeonRunEntitySeen(client, helperId, helperSnapshot);
 
             if (!client.knownEntityIds.has(helperId)) {
                 EntityHandler.sendEntity(client, helperSnapshot);
@@ -2111,6 +2238,8 @@ export class LevelHandler {
         client.playerSpawned = false;
         client.pendingLoot.clear();
         client.processedRewardSources.clear();
+        finalizeDungeonRun(client, 'leave');
+        client.dungeonRun = null;
         client.currentRoomId = 0;
         client.startedRoomEvents.clear();
         client.levelInstanceId = '';
@@ -2758,13 +2887,14 @@ export class LevelHandler {
                 }
                 progress = sharedState.progress;
             } else {
-                progress = LevelHandler.GOBLIN_RIVER_INITIAL_PROGRESS;
+                progress = getSharedDungeonInitialProgress(currentLevel);
             }
         }
 
         if (client.character) {
             client.character.questTrackerState = progress;
         }
+        noteDungeonRunCompletionProgress(client, progress);
 
         DebugLogger.logProgress('QuestProgress:update', client, client.character, {
             previousProgress,
@@ -2858,10 +2988,11 @@ export class LevelHandler {
         const br = new BitReader(data);
         const roomId = br.readMethod9();
         LevelHandler.cacheRoomId(client, roomId);
-        br.readMethod9();
+        const bossId = br.readMethod9();
         br.readMethod26();
         br.readMethod9();
         br.readMethod26();
+        noteDungeonRunBossCutscene(getClientLevelScope(client), roomId, bossId);
 
         LevelHandler.relayToLevel(client, 0xAC, data);
     }
@@ -2992,6 +3123,8 @@ export class LevelHandler {
             oldY = ent.y;
             hasOldCoord = Number.isFinite(oldX) && Number.isFinite(oldY);
         }
+
+        LevelHandler.syncTransferSourcePositionFromLiveEntity(activeCharacter, oldLevel, ent);
 
         const oldClientEntId = client.clientEntID;
         LevelHandler.clearTransferState(client, oldLevel, oldClientEntId);

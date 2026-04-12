@@ -4,6 +4,7 @@ import { BitReader } from '../network/protocol/bitReader';
 import { GameData } from '../core/GameData';
 import { GlobalState } from '../core/GlobalState';
 import { JsonAdapter } from '../database/JsonAdapter';
+import { noteDungeonRunChestOpened, noteDungeonRunTreasure } from '../core/DungeonRunStats';
 import { CombatHandler } from './CombatHandler';
 import { getClientCharacterKey, getPartyIdForClient } from '../core/PartySync';
 import { areClientsInSameLevelScope, getClientLevelScope } from '../core/LevelScope';
@@ -394,6 +395,8 @@ export class RewardHandler {
         const resolved = RewardHandler.maybeOverrideDungeonReward(client, sourceEntity, reward);
         const shouldSave = RewardHandler.applyXpReward(client, resolved.exp);
 
+        noteDungeonRunChestOpened(client, reward.sourceId, sourceEntity);
+
         if (resolved.gold > 0) {
             RewardHandler.spawnLoot(client, dropPosition.x, dropPosition.y, { gold: resolved.gold });
         }
@@ -484,6 +487,7 @@ export class RewardHandler {
 
         if (reward.gold && reward.gold > 0) {
             client.character.gold = Number(client.character.gold ?? 0) + reward.gold;
+            noteDungeonRunTreasure(client, reward.gold);
             RewardHandler.sendGoldReward(client, reward.gold, false);
             shouldSave = true;
         }

@@ -2,9 +2,16 @@ import { Client, clearKeepTutorialTimers } from '../core/Client';
 import { BitReader } from '../network/protocol/bitReader';
 import { GlobalState } from '../core/GlobalState';
 import { BitBuffer } from '../network/protocol/bitBuffer';
+import {
+    noteDungeonRunCast,
+    noteDungeonRunDeath,
+    noteDungeonRunHit,
+    noteDungeonRunKill
+} from '../core/DungeonRunStats';
 import { LevelHandler } from './LevelHandler';
 import { EntityState, EntityTeam } from '../core/Entity';
 import { EntityHandler } from './EntityHandler';
+import { MissionHandler } from './MissionHandler';
 import { areClientsInSameParty, getClientCharacterKey, sharesRoomIds, shouldShareCombatView } from '../core/PartySync';
 import { areClientsInSameLevelScope, getClientLevelScope, getScopeLevelName } from '../core/LevelScope';
 import {
@@ -877,6 +884,28 @@ export class CombatHandler {
         CombatHandler.recordContribution(levelScope, targetId, sourceSession, damage);
     }
 
+    private static resolveCombatSourceSession(levelScope: string, sourceId: number, fallbackClient: Client): Client | null {
+        if (!levelScope || sourceId <= 0) {
+            return null;
+        }
+
+        const sourceEntity = CombatHandler.resolveLevelEntity(levelScope, sourceId);
+        const summonerId = Number(sourceEntity?.summonerId ?? 0);
+        const ownerToken = Number(sourceEntity?.ownerToken ?? 0);
+
+        const sourceSession =
+            (fallbackClient.clientEntID === sourceId ? fallbackClient : null) ??
+            CombatHandler.findPlayerSessionByEntityId(sourceId) ??
+            (fallbackClient.clientEntID === summonerId ? fallbackClient : null) ??
+            CombatHandler.findPlayerSessionByEntityId(summonerId) ??
+            (ownerToken > 0 ? GlobalState.sessionsByToken.get(ownerToken) ?? null : null);
+        if (!sourceSession || !sourceSession.playerSpawned || getClientLevelScope(sourceSession) !== levelScope) {
+            return null;
+        }
+
+        return sourceSession;
+    }
+
     static async handlePowerCast(client: Client, data: Buffer): Promise<void> {
         if (LevelHandler.isGoblinRiverBossIntroLocked(client)) {
             return;
@@ -884,6 +913,19 @@ export class CombatHandler {
         const info = CombatHandler.parsePowerCastRelayInfo(data);
         if (!info) {
             return;
+        }
+
+        const sourceSession = CombatHandler.resolveCombatSourceSession(getClientLevelScope(client), info.sourceId, client);
+        if (sourceSession) {
+            noteDungeonRunCast(sourceSession, {
+                sourceId: info.sourceId,
+                powerId: info.powerId,
+                hasTargetEntity: info.hasTargetEntity,
+                hasTargetPos: info.hasTargetPos,
+                projectileId: info.projectileId,
+                isPersistent: info.isPersistent,
+                comboData: info.comboData
+            });
         }
 
         const relayPayload = CombatHandler.normalizePowerCastRelay(client, info, data);
@@ -924,6 +966,21 @@ export class CombatHandler {
         }
 
         CombatHandler.maybeRecordNpcContribution(levelScope, targetId, sourceId, damage, client);
+        const sourceSession = CombatHandler.resolveCombatSourceSession(levelScope, sourceId, client);
+        if (
+            sourceSession &&
+            targetEntity &&
+            !targetEntity.isPlayer &&
+            Number(targetEntity.team ?? 0) === EntityTeam.ENEMY &&
+            damage > 0
+        ) {
+            noteDungeonRunHit(sourceSession, {
+                sourceId,
+                targetId,
+                targetEntity,
+                damage
+            });
+        }
 
         let relayDamage = damage;
         const targetSession = CombatHandler.findPlayerSessionByEntityId(targetId);
@@ -980,6 +1037,9 @@ export class CombatHandler {
         const destroyedEntity =
             client.entities.get(entityId) ??
             (levelScope ? GlobalState.levelEntities.get(levelScope)?.get(entityId) : null);
+        const contributionSnapshot = destroyedEntity && !destroyedEntity.isPlayer && Number(destroyedEntity.team ?? 0) === EntityTeam.ENEMY
+            ? CombatHandler.getContributionSnapshot(levelScope, entityId)
+            : null;
         const shouldMirrorClientSpawnEntity = Boolean(
             levelName &&
             CombatHandler.shouldMirrorClientSpawnEntityToParty(levelName, destroyedEntity)
@@ -1008,11 +1068,19 @@ export class CombatHandler {
             if (levelMap && levelMap.size === 0) {
                 GlobalState.levelEntities.delete(levelScope);
             }
+            if (contributionSnapshot?.contributors?.length) {
+                noteDungeonRunKill(levelScope, contributionSnapshot.contributors, entityId, destroyedEntity);
+            }
             CombatHandler.noteEntityDestroyed(levelScope, entityId);
             EntityHandler.forgetKnownEntity(levelName, entityId, client.levelInstanceId);
             if (usesSharedDungeonProgress(getScopeLevelName(levelScope)) && destroyedEntity) {
                 LevelHandler.refreshSharedDungeonQuestProgress(levelScope);
             }
+        }
+
+        if (destroyedEntity && !destroyedEntity.isPlayer && Number(destroyedEntity.team ?? 0) === EntityTeam.ENEMY) {
+            await MissionHandler.handleEnemyDefeatMissionProgress(client, destroyedEntity);
+            await MissionHandler.handleForcedDungeonBossCompletion(client, destroyedEntity);
         }
 
         if (shouldRelayDestroy) {
@@ -1027,6 +1095,7 @@ export class CombatHandler {
         const usePotion = br.readMethod15();
 
         if (!usePotion) {
+            noteDungeonRunDeath(client);
             client.processedRewardSources.clear();
             CombatHandler.resetLevelEnemiesForRespawn(client);
         }

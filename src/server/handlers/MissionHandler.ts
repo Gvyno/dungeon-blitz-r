@@ -1,8 +1,19 @@
 import { Client } from '../core/Client';
+import {
+    buildDefaultDungeonScoreProfile,
+    getDungeonScoreProfile,
+    getDungeonScoreTotalCap,
+    type ResolvedDungeonScoreProfile
+} from '../core/DungeonScoreProfiles';
+import { GameData } from '../core/GameData';
 import { GlobalState } from '../core/GlobalState';
+import { isWolfsEndDungeonLevel } from '../core/WolfsEndDungeonStatsPolicy';
+import { finalizeDungeonRun, getActiveDungeonRunStats, noteDungeonRunCompletionProgress } from '../core/DungeonRunStats';
+import { buildDungeonRunScoreSummary } from '../core/DungeonRunStats';
 import { LevelConfig } from '../core/LevelConfig';
 import { getClientLevelScope } from '../core/LevelScope';
 import {
+    getSharedDungeonProgressTotals,
     getOrCreateSharedDungeonProgressState,
     hasSharedDungeonProgressHostiles,
     recomputeSharedDungeonProgress,
@@ -19,6 +30,26 @@ import { BitReader } from '../network/protocol/bitReader';
 const db = new JsonAdapter();
 
 type MissionEntry = Record<string, any>;
+type DungeonCompletionResult = {
+    actualKills: number;
+    totalScore: number;
+    stars: number;
+    resultBar: number;
+    rank: number;
+    killsScore: number;
+    accuracyScore: number;
+    deathsScore: number;
+    treasureScore: number;
+    timeBonusScore: number;
+};
+
+type DungeonMissionUpdateResult = {
+    missionId: number;
+    state: number;
+    newlyCompleted: boolean;
+    persistedStars: number;
+    persistedScore: number;
+};
 
 export class MissionHandler {
     private static readonly MISSION_NOT_STARTED = 0;
@@ -26,6 +57,36 @@ export class MissionHandler {
     private static readonly MISSION_READY_TO_TURN_IN = 2;
     private static readonly MISSION_CLAIMED = 3;
     private static readonly ACHIEVEMENT_MAMMOTH_IDOL_REWARD = 10;
+    private static readonly NEWBIE_ROAD_GOBLIN_KILL_NAMES = new Set([
+        'GoblinArmorSword',
+        'GoblinBrute',
+        'GoblinClub',
+        'GoblinDagger',
+        'GoblinHatchet',
+        'GoblinMiniBoss',
+        'GoblinShamanHood',
+        'GoblinShamanSkullHat'
+    ]);
+    private static readonly NEWBIE_ROAD_HARD_GOBLIN_KILL_NAMES = new Set([
+        'GoblinArmorSwordHard',
+        'GoblinBruteHard',
+        'GoblinClubHard',
+        'GoblinDaggerHard',
+        'GoblinHatchetHard',
+        'GoblinMiniBossHard',
+        'GoblinShamanHoodHard',
+        'GoblinShamanSkullHatHard'
+    ]);
+    private static readonly KILL_PROGRESS_TARGETS: Readonly<Record<number, ReadonlySet<string>>> = {
+        [MissionID.GetGoblinNoserings]: new Set(['GoblinBrute']),
+        [MissionID.GetGoblinWands]: new Set(['GoblinShamanHood', 'GoblinShamanSkullHat']),
+        [MissionID.GetGoblinNoseringsHard]: new Set(['GoblinBruteHard']),
+        [MissionID.GetGoblinWandsHard]: new Set(['GoblinShamanHoodHard', 'GoblinShamanSkullHatHard']),
+        [MissionID.KillGoblins]: MissionHandler.NEWBIE_ROAD_GOBLIN_KILL_NAMES,
+        [MissionID.KillGoblinsHard]: MissionHandler.NEWBIE_ROAD_HARD_GOBLIN_KILL_NAMES,
+        [MissionID.GetHobgoblinNoserings]: new Set(['BlackGoblinBrute']),
+        [MissionID.GetHobgoblinNoseringsHard]: new Set(['BlackGoblinBruteHard'])
+    };
 
     static repairEarlyStoryOnLogin(
         character: Character,
@@ -111,6 +172,10 @@ export class MissionHandler {
             didMutate = true;
         }
 
+        if (MissionHandler.repairCompletedDungeonMissionStates(character, currentLevel)) {
+            didMutate = true;
+        }
+
         if (
             MissionHandler.getMissionState(character, MissionID.ClearYourHouse) >= MissionHandler.MISSION_CLAIMED &&
             Number(character.questTrackerState ?? 0) < 100
@@ -130,6 +195,80 @@ export class MissionHandler {
         MissionHandler.sendQuestProgress(client, Math.max(0, Number(client.character.questTrackerState ?? 0)));
     }
 
+    static async handleEnemyDefeatMissionProgress(client: Client, destroyedEntity: any): Promise<void> {
+        if (!client.character) {
+            return;
+        }
+
+        const defeatedNames = MissionHandler.getDefeatedEnemyNames(destroyedEntity);
+        if (!defeatedNames.length) {
+            return;
+        }
+
+        const currentLevel =
+            LevelConfig.normalizeLevelName(client.currentLevel || String(client.character.CurrentLevel?.name ?? '')) ||
+            client.currentLevel ||
+            String(client.character.CurrentLevel?.name ?? '');
+        if (!currentLevel) {
+            return;
+        }
+
+        const missions = MissionHandler.getMissionStateMap(client.character);
+        let didMutate = false;
+
+        for (const [missionIdText, rawEntry] of Object.entries(missions)) {
+            const missionId = Number(missionIdText);
+            if (!Number.isFinite(missionId)) {
+                continue;
+            }
+
+            const missionDef = MissionLoader.getMissionDef(missionId);
+            if (!missionDef || !MissionHandler.isMissionAvailableInCurrentLevel(missionDef, currentLevel)) {
+                continue;
+            }
+
+            const targetNames = MissionHandler.KILL_PROGRESS_TARGETS[missionId];
+            const activeTargetNames = MissionHandler.getMissionActiveTargetNames(missionDef);
+            const matchesKillTarget = Boolean(
+                targetNames && defeatedNames.some((name) => targetNames.has(name))
+            );
+            const matchesActiveTarget = activeTargetNames.some((name) => defeatedNames.includes(name));
+            if (!matchesKillTarget && !matchesActiveTarget) {
+                continue;
+            }
+
+            const entry = MissionHandler.asMissionEntry(rawEntry);
+            if (Number(entry.state ?? MissionHandler.MISSION_NOT_STARTED) !== MissionHandler.MISSION_IN_PROGRESS) {
+                continue;
+            }
+
+            const currentCount = Math.max(0, Number(entry.currCount ?? 0));
+            const completeCount = Math.max(1, Number(missionDef.CompleteCount ?? 1));
+            if (currentCount >= completeCount) {
+                continue;
+            }
+
+            const nextCount = Math.min(completeCount, currentCount + 1);
+            const nextState =
+                nextCount >= completeCount
+                    ? MissionHandler.MISSION_READY_TO_TURN_IN
+                    : MissionHandler.MISSION_IN_PROGRESS;
+
+            MissionHandler.setMissionState(client.character, missionId, nextState, missionDef, {
+                currCount: nextCount
+            });
+            MissionHandler.sendMissionProgress(client, missionId, 1);
+            if (nextState === MissionHandler.MISSION_READY_TO_TURN_IN) {
+                MissionHandler.sendMissionComplete(client, missionId);
+            }
+            didMutate = true;
+        }
+
+        if (didMutate) {
+            await MissionHandler.saveCharacter(client);
+        }
+    }
+
     static async handleSetLevelComplete(client: Client, data: Buffer): Promise<void> {
         if (!client.character) {
             return;
@@ -145,38 +284,65 @@ export class MissionHandler {
         const requiredKills = br.readMethod9();
         const levelWidthScore = br.readMethod9();
 
-        const currentLevel = client.currentLevel || String(client.character.CurrentLevel?.name ?? '');
+        const currentLevel =
+            LevelConfig.normalizeLevelName(client.currentLevel || String(client.character.CurrentLevel?.name ?? '')) ||
+            client.currentLevel ||
+            String(client.character.CurrentLevel?.name ?? '');
         const levelScope = getClientLevelScope(client);
+        const forceSharedDungeonCompletion = Boolean(levelScope) && client.forcedDungeonCompletionScope === levelScope;
+        const trackerCompletionPercent = Math.max(0, Number(client.character.questTrackerState ?? 0));
+        let effectiveCompletionPercent = isWolfsEndDungeonLevel(currentLevel)
+            ? Math.max(completionPercent, trackerCompletionPercent)
+            : completionPercent;
         let actualKills = Math.max(requiredKills - remainingKills, 0);
         let clearedDungeon =
-            completionPercent >= 100 ||
+            effectiveCompletionPercent >= 100 ||
             (requiredKills > 0 && remainingKills <= 0);
 
         if (usesSharedDungeonProgress(currentLevel) && levelScope) {
-            const sharedState = recomputeSharedDungeonProgress(levelScope) ?? getOrCreateSharedDungeonProgressState(levelScope);
+            const sharedState = forceSharedDungeonCompletion
+                ? getOrCreateSharedDungeonProgressState(levelScope)
+                : recomputeSharedDungeonProgress(levelScope) ?? getOrCreateSharedDungeonProgressState(levelScope);
             if (sharedState) {
-                if (sharedState.progress < 100) {
+                if (!forceSharedDungeonCompletion && sharedState.progress < 100) {
                     if (!hasSharedDungeonProgressHostiles(levelScope)) {
                         return;
                     }
                     return;
                 }
 
+                if (forceSharedDungeonCompletion) {
+                    sharedState.progress = 100;
+                    effectiveCompletionPercent = 100;
+                    client.character.questTrackerState = 100;
+                    MissionHandler.broadcastSharedDungeonQuestProgress(levelScope, 100);
+                } else {
+                    effectiveCompletionPercent = Math.max(effectiveCompletionPercent, Number(sharedState.progress ?? 0));
+                }
+                noteDungeonRunCompletionProgress(client, effectiveCompletionPercent);
+                clearedDungeon =
+                    forceSharedDungeonCompletion ||
+                    effectiveCompletionPercent >= 100 ||
+                    (requiredKills > 0 && remainingKills <= 0);
+
                 const liveAuthorityToken = resolveSharedDungeonProgressAuthorityToken(levelScope);
                 if (liveAuthorityToken > 0) {
                     sharedState.authorityToken = liveAuthorityToken;
                 }
 
-                if (sharedState.authorityToken > 0 && client.token !== sharedState.authorityToken) {
+                if (!forceSharedDungeonCompletion && sharedState.authorityToken > 0 && client.token !== sharedState.authorityToken) {
                     return;
                 }
             }
         }
+        noteDungeonRunCompletionProgress(client, effectiveCompletionPercent);
 
         let didMutate = false;
         if (currentLevel === 'TutorialBoat' || currentLevel === 'TutorialDungeon') {
             clearedDungeon = true;
-            actualKills = Math.max(actualKills, requiredKills, 1);
+            if (currentLevel === 'TutorialBoat') {
+                actualKills = Math.max(actualKills, requiredKills, 1);
+            }
             if (Number(client.character.questTrackerState ?? 0) !== 100) {
                 client.character.questTrackerState = 100;
                 didMutate = true;
@@ -200,31 +366,48 @@ export class MissionHandler {
             didMutate = true;
         }
 
+        const completionResult = MissionHandler.buildDungeonCompletionResult(
+            client,
+            currentLevel,
+            levelScope,
+            {
+                completionPercent: effectiveCompletionPercent,
+                bonusScoreTotal,
+                goldReward,
+                requiredKills,
+                actualKills,
+                dungeonCompleted: clearedDungeon
+            }
+        );
+
         let completedMissionId = 0;
         if (clearedDungeon) {
-            completedMissionId = MissionHandler.completeActiveDungeonMission(client.character, currentLevel, {
-                stars: Math.max(0, levelWidthScore),
-                score: Math.max(0, bonusScoreTotal),
+            const missionUpdate = MissionHandler.updateDungeonMissionResult(client.character, currentLevel, {
+                stars: completionResult.stars,
+                score: completionResult.totalScore,
                 completedAt: Math.floor(Date.now() / 1000)
             });
+            completedMissionId = missionUpdate.missionId;
             if (completedMissionId) {
                 didMutate = true;
-                MissionHandler.sendMissionComplete(client, completedMissionId);
+                if (missionUpdate.newlyCompleted) {
+                    MissionHandler.sendMissionComplete(client, completedMissionId);
+                }
 
                 const completedMissionDef = MissionLoader.getMissionDef(completedMissionId);
-                const completedMissionState = MissionHandler.getMissionState(client.character, completedMissionId);
 
                 if (
+                    missionUpdate.newlyCompleted &&
+                    missionUpdate.state >= MissionHandler.MISSION_CLAIMED &&
                     completedMissionId !== MissionID.DefendTheShip &&
                     completedMissionDef &&
-                    !MissionHandler.missionRequiresTurnIn(completedMissionDef) &&
-                    completedMissionState >= MissionHandler.MISSION_CLAIMED
+                    !MissionHandler.missionRequiresTurnIn(completedMissionDef)
                 ) {
                     MissionHandler.sendMissionCompleteUi(
                         client,
                         completedMissionId,
-                        levelWidthScore || 3,
-                        bonusScoreTotal
+                        missionUpdate.persistedStars,
+                        missionUpdate.persistedScore
                     );
                 }
             }
@@ -239,10 +422,62 @@ export class MissionHandler {
         }
 
         MissionHandler.sendDungeonComplete(client, {
-            stars: levelWidthScore || 3,
-            kills: actualKills,
-            treasure: goldReward
+            stars: completionResult.stars,
+            resultBar: completionResult.resultBar,
+            rank: completionResult.rank,
+            kills: completionResult.killsScore,
+            accuracy: completionResult.accuracyScore,
+            deaths: completionResult.deathsScore,
+            treasure: completionResult.treasureScore,
+            timeBonus: completionResult.timeBonusScore
         });
+        if (forceSharedDungeonCompletion && client.forcedDungeonCompletionScope === levelScope) {
+            client.forcedDungeonCompletionScope = '';
+        }
+    }
+
+    static async handleForcedDungeonBossCompletion(client: Client, destroyedEntity: any): Promise<void> {
+        if (!client.character) {
+            return;
+        }
+
+        const currentLevel =
+            LevelConfig.normalizeLevelName(client.currentLevel || String(client.character.CurrentLevel?.name ?? '')) ||
+            client.currentLevel ||
+            String(client.character.CurrentLevel?.name ?? '');
+        if (!currentLevel || !LevelConfig.isDungeonLevel(currentLevel)) {
+            return;
+        }
+
+        if (!MissionHandler.isDungeonBossEntity(destroyedEntity)) {
+            return;
+        }
+
+        const levelScope = getClientLevelScope(client);
+        if (!levelScope || client.forcedDungeonCompletionScope === levelScope) {
+            return;
+        }
+
+        const authorityToken = resolveSharedDungeonProgressAuthorityToken(levelScope);
+        if (authorityToken > 0 && authorityToken !== client.token) {
+            return;
+        }
+
+        if (getActiveDungeonRunStats(client)?.finalizedStats) {
+            return;
+        }
+
+        client.forcedDungeonCompletionScope = levelScope;
+        try {
+            await MissionHandler.handleSetLevelComplete(
+                client,
+                MissionHandler.buildSyntheticLevelCompletePacket(100)
+            );
+        } finally {
+            if (client.forcedDungeonCompletionScope === levelScope && getActiveDungeonRunStats(client)?.finalizedStats) {
+                client.forcedDungeonCompletionScope = '';
+            }
+        }
     }
 
     static async handleBadgeRequest(client: Client, data: Buffer): Promise<void> {
@@ -286,7 +521,7 @@ export class MissionHandler {
         await MissionHandler.saveCharacter(client);
     }
 
-    private static completeActiveDungeonMission(
+    private static updateDungeonMissionResult(
         character: Character,
         currentLevel: string,
         completion: {
@@ -294,7 +529,7 @@ export class MissionHandler {
             score: number;
             completedAt: number;
         }
-    ): number {
+    ): DungeonMissionUpdateResult {
         const missions = MissionHandler.getMissionStateMap(character);
 
         for (const [missionIdText, rawEntry] of Object.entries(missions)) {
@@ -304,7 +539,8 @@ export class MissionHandler {
             }
 
             const entry = MissionHandler.asMissionEntry(rawEntry);
-            if (Number(entry.state ?? MissionHandler.MISSION_NOT_STARTED) !== MissionHandler.MISSION_IN_PROGRESS) {
+            const currentState = Number(entry.state ?? MissionHandler.MISSION_NOT_STARTED);
+            if (currentState <= MissionHandler.MISSION_NOT_STARTED) {
                 continue;
             }
 
@@ -313,20 +549,50 @@ export class MissionHandler {
                 continue;
             }
 
-            const completionState = MissionHandler.missionRequiresTurnIn(missionDef)
-                ? MissionHandler.MISSION_READY_TO_TURN_IN
-                : MissionHandler.MISSION_CLAIMED;
+            let nextState = currentState;
+            let newlyCompleted = false;
+            const existingStars = Math.max(0, Number(entry.Tier ?? 0));
+            const existingScore = Math.max(0, Number(entry.highscore ?? 0));
+            const shouldReplaceBest =
+                completion.score > existingScore ||
+                (completion.score === existingScore && completion.stars > existingStars);
+            const persistedStars = shouldReplaceBest ? completion.stars : existingStars;
+            const persistedScore = shouldReplaceBest ? completion.score : existingScore;
+            const persistedTime = shouldReplaceBest
+                ? completion.completedAt
+                : Math.max(0, Number(entry.Time ?? completion.completedAt));
 
-            MissionHandler.setMissionState(character, missionId, completionState, missionDef, {
-                currCount: Math.max(1, Number(missionDef.CompleteCount ?? 1)),
-                Tier: completion.stars,
-                highscore: completion.score,
-                Time: completion.completedAt
+            if (currentState === MissionHandler.MISSION_IN_PROGRESS) {
+                nextState = MissionHandler.missionRequiresTurnIn(missionDef)
+                    ? MissionHandler.MISSION_READY_TO_TURN_IN
+                    : MissionHandler.MISSION_CLAIMED;
+                newlyCompleted = true;
+            }
+
+            MissionHandler.setMissionState(character, missionId, nextState, missionDef, {
+                currCount: nextState >= MissionHandler.MISSION_READY_TO_TURN_IN
+                    ? Math.max(1, Number(missionDef.CompleteCount ?? 1))
+                    : Number(entry.currCount ?? 0),
+                Tier: persistedStars,
+                highscore: persistedScore,
+                Time: persistedTime
             });
-            return missionId;
+            return {
+                missionId,
+                state: nextState,
+                newlyCompleted,
+                persistedStars,
+                persistedScore
+            };
         }
 
-        return 0;
+        return {
+            missionId: 0,
+            state: MissionHandler.MISSION_NOT_STARTED,
+            newlyCompleted: false,
+            persistedStars: 0,
+            persistedScore: 0
+        };
     }
 
     private static autoAcceptFollowupMission(
@@ -404,6 +670,15 @@ export class MissionHandler {
         }
 
         return MissionHandler.getMissionState(character, MissionID.DeliverToSwamp) >= MissionHandler.MISSION_CLAIMED;
+    }
+
+    private static isMissionAvailableInCurrentLevel(missionDef: MissionDef, currentLevel: string): boolean {
+        const zoneSet = String(missionDef.ZoneSet ?? '')
+            .split(',')
+            .map((entry) => entry.trim())
+            .filter(Boolean);
+
+        return !zoneSet.length || zoneSet.includes(currentLevel);
     }
 
     private static moveCharacterBackToSafeLevel(character: Character, currentLevel: string): boolean {
@@ -536,29 +811,137 @@ export class MissionHandler {
         client.sendBitBuffer(0xA1, bb);
     }
 
+    private static clamp(value: number, min: number, max: number): number {
+        return Math.max(min, Math.min(max, Math.round(Number(value) || 0)));
+    }
+
+    private static getDungeonParTimeMs(levelName: string, killTarget: number): number {
+        const normalizedKillTarget = Math.max(1, Math.round(Number(killTarget) || 0));
+        const baseMinutes = 8 + (normalizedKillTarget * 0.3);
+        const hardMultiplier = LevelConfig.get(levelName).isHard ? 1.1 : 1;
+        return Math.max(60_000, Math.round(baseMinutes * hardMultiplier * 60_000));
+    }
+
+    private static buildDungeonCompletionResult(
+        client: Client,
+        currentLevel: string,
+        levelScope: string,
+        raw: {
+            completionPercent: number;
+            bonusScoreTotal: number;
+            goldReward: number;
+            requiredKills: number;
+            actualKills: number;
+            dungeonCompleted: boolean;
+        }
+    ): DungeonCompletionResult {
+        const normalizedLevel = LevelConfig.normalizeLevelName(currentLevel) || currentLevel;
+        const runStats = getActiveDungeonRunStats(client);
+        const finalizedRun = finalizeDungeonRun(
+            client,
+            raw.dungeonCompleted ? 'success' : 'fail',
+            {
+                completionPercent: raw.completionPercent,
+                dungeonCompleted: raw.dungeonCompleted
+            }
+        );
+        const scoreSummary = finalizedRun?.scoreSummary ?? (runStats ? buildDungeonRunScoreSummary(runStats) : null);
+        const profile: ResolvedDungeonScoreProfile =
+            scoreSummary?.profile ?? getDungeonScoreProfile(normalizedLevel) ?? buildDefaultDungeonScoreProfile(normalizedLevel);
+        const maxTotalScore = getDungeonScoreTotalCap(profile);
+        const killsScore = Math.max(0, Number(scoreSummary?.finalStat.kills ?? 0));
+        const accuracyScore = Math.max(0, Number(scoreSummary?.finalStat.accuracy ?? 0));
+        const deathsScore = Math.max(0, Number(scoreSummary?.finalStat.deaths ?? 0));
+        const treasureScore = Math.max(0, Number(scoreSummary?.finalStat.treasure ?? 0));
+        const timeBonusScore = Math.max(0, Number(scoreSummary?.finalStat.timeBonus ?? 0));
+        const totalScore = Math.max(0, Number(scoreSummary?.finalStat.total ?? (killsScore + accuracyScore + deathsScore + treasureScore + timeBonusScore)));
+        const stars = Math.max(0, Math.min(10, Number(scoreSummary?.stars ?? 0)));
+        const rank = Math.max(1, Math.min(10, Number(scoreSummary?.rank ?? 10)));
+        const effectiveKillCount = Math.max(
+            0,
+            Number(finalizedRun?.killedEnemies ?? runStats?.killedEnemies ?? raw.actualKills ?? 0)
+        );
+
+        return {
+            actualKills: effectiveKillCount,
+            totalScore,
+            stars,
+            resultBar: scoreSummary?.resultBar ?? profile.resultBar,
+            rank,
+            killsScore,
+            accuracyScore,
+            deathsScore,
+            treasureScore,
+            timeBonusScore
+        };
+    }
+
     private static sendDungeonComplete(
         client: Client,
         stats: {
             stars: number;
-            resultBar?: number;
-            rank?: number;
+            resultBar: number;
+            rank: number;
             kills: number;
-            accuracy?: number;
-            deaths?: number;
+            accuracy: number;
+            deaths: number;
             treasure: number;
-            timeBonus?: number;
+            timeBonus: number;
         }
     ): void {
         const bb = new BitBuffer(false);
         bb.writeMethod6(Math.max(0, Math.min(stats.stars, 15)), 4);
-        bb.writeMethod4(stats.resultBar ?? 1);
-        bb.writeMethod4(stats.rank ?? 1);
+        bb.writeMethod4(Math.max(0, stats.resultBar));
+        bb.writeMethod4(Math.max(0, stats.rank));
         bb.writeMethod4(Math.max(0, stats.kills));
-        bb.writeMethod4(stats.accuracy ?? 50);
-        bb.writeMethod4(stats.deaths ?? 0);
+        bb.writeMethod4(Math.max(0, stats.accuracy));
+        bb.writeMethod4(Math.max(0, stats.deaths));
         bb.writeMethod4(Math.max(0, stats.treasure));
-        bb.writeMethod4(stats.timeBonus ?? 0);
+        bb.writeMethod4(Math.max(0, stats.timeBonus));
         client.sendBitBuffer(0x87, bb);
+    }
+
+    private static buildSyntheticLevelCompletePacket(completionPercent: number): Buffer {
+        const bb = new BitBuffer(false);
+        bb.writeMethod9(Math.max(0, Math.min(100, Math.round(Number(completionPercent ?? 0)))));
+        bb.writeMethod9(0);
+        bb.writeMethod9(0);
+        bb.writeMethod9(0);
+        bb.writeMethod9(0);
+        bb.writeMethod9(0);
+        bb.writeMethod9(0);
+        bb.writeMethod9(1);
+        bb.writeMethod9(3);
+        return bb.toBuffer();
+    }
+
+    private static getMissionActiveTargetNames(missionDef: MissionDef): string[] {
+        return String(missionDef.ActiveTarget ?? '')
+            .split(',')
+            .map((entry) => entry.trim())
+            .filter(Boolean);
+    }
+
+    private static getDefeatedEnemyNames(entity: any): string[] {
+        const names = new Set<string>();
+        for (const raw of [
+            entity?.name,
+            entity?.characterName,
+            entity?.character_name
+        ]) {
+            const normalized = String(raw ?? '').trim();
+            if (normalized) {
+                names.add(normalized);
+            }
+        }
+        return [...names];
+    }
+
+    private static isDungeonBossEntity(entity: any): boolean {
+        const entityName = String(entity?.name ?? '').trim();
+        const entType = entityName ? GameData.getEntType(entityName) ?? {} : {};
+        const entRank = String(entity?.entRank ?? entType?.EntRank ?? '').trim();
+        return entRank === 'Boss';
     }
 
     private static getMissionStateMap(character: Character): Record<string, MissionEntry> {
@@ -594,6 +977,59 @@ export class MissionHandler {
                 missionId,
                 MissionHandler.MISSION_READY_TO_TURN_IN,
                 missionDef
+            );
+            didMutate = true;
+        }
+
+        return didMutate;
+    }
+
+    private static repairCompletedDungeonMissionStates(
+        character: Character,
+        currentLevelRaw: string
+    ): boolean {
+        if (Number(character.questTrackerState ?? 0) < 100) {
+            return false;
+        }
+
+        const currentLevel =
+            LevelConfig.normalizeLevelName(currentLevelRaw || String(character.CurrentLevel?.name ?? '')) ||
+            String(currentLevelRaw || character.CurrentLevel?.name || '');
+        const missions = MissionHandler.getMissionStateMap(character);
+        let didMutate = false;
+
+        for (const [missionIdText, rawEntry] of Object.entries(missions)) {
+            const missionId = Number(missionIdText);
+            if (!Number.isFinite(missionId)) {
+                continue;
+            }
+
+            const entry = MissionHandler.asMissionEntry(rawEntry);
+            if (Number(entry.state ?? MissionHandler.MISSION_NOT_STARTED) !== MissionHandler.MISSION_IN_PROGRESS) {
+                continue;
+            }
+
+            const missionDef = MissionLoader.getMissionDef(missionId);
+            const dungeonLevel =
+                LevelConfig.normalizeLevelName(String(missionDef?.Dungeon ?? '')) ||
+                String(missionDef?.Dungeon ?? '').trim();
+            if (!missionDef || !dungeonLevel || currentLevel === dungeonLevel) {
+                continue;
+            }
+
+            MissionHandler.setMissionState(
+                character,
+                missionId,
+                MissionHandler.missionRequiresTurnIn(missionDef)
+                    ? MissionHandler.MISSION_READY_TO_TURN_IN
+                    : MissionHandler.MISSION_CLAIMED,
+                missionDef,
+                {
+                    currCount: Math.max(1, Number(missionDef.CompleteCount ?? 1)),
+                    Tier: Number(entry.Tier ?? 0),
+                    highscore: Number(entry.highscore ?? 0),
+                    Time: Number(entry.Time ?? 0)
+                }
             );
             didMutate = true;
         }
