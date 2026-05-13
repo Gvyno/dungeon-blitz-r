@@ -174,6 +174,84 @@ export class MissionHandler {
         'CastleLizardHeavy1Hard',
         'CastleLizardHeavy2Hard'
     ]);
+    private static readonly STORMSHARD_GNOME_KILL_NAMES = new Set([
+        'CaveGnome',
+        'CaveGnomeHard',
+        'PuckShadow',
+        'PuckShadow2',
+        'PuckShadowServant',
+        'PuckShadowHard',
+        'PuckShadow2Hard',
+        'PuckShadowServantHard',
+        'OasisPuck',
+        'OasisPuckHard'
+    ]);
+    private static readonly STORMSHARD_CYCLOPS_KILL_NAMES = new Set([
+        'Cyclops',
+        'CyclopsCoward',
+        'CyclopsBerserker',
+        'CyclopsChieftain',
+        'CyclopsHard',
+        'CyclopsCowardHard',
+        'CyclopsBerserkerHard',
+        'CyclopsChieftainHard',
+        'StormCyclops',
+        'StormCyclopsCoward',
+        'StormCyclopsBerserker',
+        'StormCyclopsChieftain',
+        'StormCyclopsHard',
+        'StormCyclopsCowardHard',
+        'StormCyclopsBerserkerHard',
+        'StormCyclopsChieftainHard',
+        'RockCyclops',
+        'RockCyclopsCoward',
+        'RockCyclopsBerserker',
+        'RockCyclopsChieftain',
+        'RockCyclopsHard',
+        'RockCyclopsCowardHard',
+        'RockCyclopsBerserkerHard',
+        'RockCyclopsChieftainHard'
+    ]);
+    private static readonly STORMSHARD_SPIDER_KILL_NAMES = new Set([
+        'CaveSpider',
+        'CaveSpider2',
+        'CaveSpiderHard',
+        'CaveSpider2Hard',
+        'AbominationSpider',
+        'AbominationSpiderHard',
+        'LeapingSpider',
+        'LeapingSpider2',
+        'LeapingSpiderHard',
+        'LeapingSpider2Hard',
+        'GladeSpider',
+        'GladeSpider2',
+        'GladeSpiderHard',
+        'GladeSpider2Hard'
+    ]);
+    private static readonly STORMSHARD_ROCK_HULK_KILL_NAMES = new Set([
+        'MeylourHulk',
+        'MeylourHulkHard',
+        'RockHulkMini',
+        'GraniteRockHulkMini',
+        'MarbleRockHulkMini',
+        'RockHulk',
+        'GraniteRockHulk',
+        'MarbleRockHulk',
+        'RockHulkGreater',
+        'RockHulkKing',
+        'RockHulkMiniHard',
+        'GraniteRockHulkMiniHard',
+        'MarbleRockHulkMiniHard',
+        'RockHulkHard',
+        'GraniteRockHulkHard',
+        'MarbleRockHulkHard',
+        'RockHulkGreaterHard',
+        'RockHulkKingHard',
+        'MagmaRockHulkMini',
+        'MagmaRockHulk',
+        'MagmaRockHulkMiniHard',
+        'MagmaRockHulkHard'
+    ]);
     private static readonly KILL_PROGRESS_TARGETS: Readonly<Record<number, ReadonlySet<string>>> = {
         [MissionID.GetGoblinNoserings]: new Set(['GoblinBrute']),
         [MissionID.GetGoblinWands]: new Set(['GoblinShamanHood', 'GoblinShamanSkullHat']),
@@ -190,7 +268,15 @@ export class MissionHandler {
         [MissionID.SpiritProblem]: MissionHandler.CASTLE_LIZARD_PROBLEM_KILL_NAMES,
         [MissionID.SpiritProblemHard]: MissionHandler.CASTLE_LIZARD_PROBLEM_HARD_KILL_NAMES,
         [MissionID.GetHobgoblinNoserings]: new Set(['BlackGoblinBrute']),
-        [MissionID.GetHobgoblinNoseringsHard]: new Set(['BlackGoblinBruteHard'])
+        [MissionID.GetHobgoblinNoseringsHard]: new Set(['BlackGoblinBruteHard']),
+        [MissionID.CollectRockShards]: MissionHandler.STORMSHARD_ROCK_HULK_KILL_NAMES,
+        [MissionID.CollectRockShardsHard]: MissionHandler.STORMSHARD_ROCK_HULK_KILL_NAMES,
+        [MissionID.DriveAwayGnomes]: MissionHandler.STORMSHARD_GNOME_KILL_NAMES,
+        [MissionID.DriveAwayGnomesHard]: MissionHandler.STORMSHARD_GNOME_KILL_NAMES,
+        [MissionID.SquashSomeSpiders]: MissionHandler.STORMSHARD_SPIDER_KILL_NAMES,
+        [MissionID.SquashSomeSpidersHard]: MissionHandler.STORMSHARD_SPIDER_KILL_NAMES,
+        [MissionID.SlayCyclops]: MissionHandler.STORMSHARD_CYCLOPS_KILL_NAMES,
+        [MissionID.SlayCyclopsHard]: MissionHandler.STORMSHARD_CYCLOPS_KILL_NAMES
     };
     private static readonly SETTLE_THE_DEAD_MISSION_IDS = new Set([
         MissionID.SettleTheDead,
