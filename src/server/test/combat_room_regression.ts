@@ -219,6 +219,81 @@ function parseEntityState(payload: Buffer): { entityId: number; entState: number
     };
 }
 
+function parsePlayerSnapshot(payload: Buffer): { entityId: number; entState: number; healthDelta: number } {
+    const br = new BitReader(payload);
+    const entityId = br.readMethod4();
+    br.readMethod13();
+    assert.equal(br.readMethod15(), true, 'player snapshot should include customization data');
+
+    br.readMethod13(); // class
+    br.readMethod13(); // gender
+    br.readMethod13(); // head
+    br.readMethod13(); // hair
+    br.readMethod13(); // mouth
+    br.readMethod13(); // face
+    br.readMethod6(24);
+    br.readMethod6(24);
+    br.readMethod6(24);
+    br.readMethod6(24);
+
+    for (let slot = 0; slot < 6; slot++) {
+        if (!br.readMethod15()) {
+            continue;
+        }
+        br.readMethod6(11);
+        br.readMethod6(2);
+        br.readMethod6(16);
+        br.readMethod6(16);
+        br.readMethod6(16);
+        br.readMethod6(8);
+        br.readMethod6(8);
+    }
+
+    br.readMethod45();
+    br.readMethod45();
+    br.readMethod45();
+    br.readMethod6(Entity.TEAM_BITS);
+    assert.equal(br.readMethod15(), true, 'player snapshot should take the player branch');
+    br.readMethod15();
+    br.readMethod15();
+    br.readMethod6(7);
+    br.readMethod6(6);
+    br.readMethod6(7);
+    br.readMethod6(5);
+
+    if (br.readMethod15()) {
+        for (let index = 0; index < 3; index++) {
+            br.readMethod6(7);
+            br.readMethod6(6);
+        }
+    }
+
+    for (let index = 0; index < 3; index++) {
+        if (br.readMethod15()) {
+            br.readMethod13();
+        }
+    }
+
+    if (br.readMethod15()) {
+        br.readMethod4();
+    }
+    if (br.readMethod15()) {
+        br.readMethod4();
+    }
+
+    const entState = br.readMethod6(Entity.STATE_BITS);
+    br.readMethod15();
+    br.readMethod6(Entity.MAX_CHAR_LEVEL_BITS);
+    br.readMethod6(4);
+    assert.equal(br.readMethod15(), false, 'test fixture should not include talent data');
+
+    return {
+        entityId,
+        entState,
+        healthDelta: br.readMethod45()
+    };
+}
+
 function parseHpDelta(payload: Buffer): { entityId: number; delta: number } {
     const br = new BitReader(payload);
     return {
@@ -849,7 +924,7 @@ async function testVeryLargePowerHitRelaysSafeDisplayDamage(): Promise<void> {
     );
 }
 
-async function testBakedOutdoorHostileHitsStayOwnerLocal(): Promise<void> {
+async function testBakedOutdoorHostileHitsSyncToPartyOnly(): Promise<void> {
     const sender = createFakeClient(210, 'Alpha', 1);
     const partyOtherRoom = createFakeClient(211, 'Beta', 5);
     const sameRoomStranger = createFakeClient(212, 'Gamma', 1);
@@ -892,14 +967,14 @@ async function testBakedOutdoorHostileHitsStayOwnerLocal(): Promise<void> {
     await CombatHandler.handlePowerHit(sender as never, buildPowerHitPayload(hostile.id, sender.clientEntID, 42, 77));
 
     assert.equal(
-        partyOtherRoom.sentPackets.some((packet) => packet.id === 0x0A || packet.id === 0x0F),
-        false,
-        'party mates should not receive private outdoor hostile combat sync'
+        partyOtherRoom.sentPackets.some((packet) => packet.id === 0x0A),
+        true,
+        'party mates should receive shared outdoor hostile combat sync'
     );
     assert.equal(
         sameRoomStranger.sentPackets.some((packet) => packet.id === 0x0A || packet.id === 0x0F),
         false,
-        'same-room strangers should still not receive private outdoor hostile combat packets'
+        'same-room strangers should not receive party outdoor hostile combat packets'
     );
 }
 
@@ -983,9 +1058,40 @@ async function testHostileHitsCanKillPlayersAndStayRoomScoped(): Promise<void> {
         'local player should only receive the hostile power-hit packet so the damage is shown once'
     );
     assert.equal(
-        partyOtherRoom.sentPackets.some((packet) => packet.id === 0x0A || packet.id === 0x78 || packet.id === 0x07),
+        partyOtherRoom.sentPackets.some((packet) => packet.id === 0x0A || packet.id === 0x78),
         false,
-        'party members in a different room should not receive hostile NPC combat packets from outside their room'
+        'party members in a different room should not receive hostile NPC damage or HP-delta packets'
+    );
+    const partyDeathState = partyOtherRoom.sentPackets.find((packet) => {
+        if (packet.id !== 0x07) {
+            return false;
+        }
+        const state = parseEntityState(packet.payload);
+        return state.entityId === victim.clientEntID && state.entState === EntityState.DEAD;
+    });
+    assert.notEqual(
+        partyDeathState,
+        undefined,
+        'party members in a different room should still receive the player death state for their party portrait'
+    );
+    const partySnapshot = partyOtherRoom.sentPackets
+        .filter((packet) => packet.id === 0x0F)
+        .map((packet) => parsePlayerSnapshot(packet.payload))
+        .find((snapshot) => snapshot.entityId === victim.clientEntID);
+    assert.notEqual(
+        partySnapshot,
+        undefined,
+        'party members in a different room should receive an updated player snapshot for portrait HP'
+    );
+    assert.equal(
+        partySnapshot?.entState,
+        EntityState.DEAD,
+        'the party portrait snapshot should mark the player as dead'
+    );
+    assert.equal(
+        partySnapshot?.healthDelta,
+        -victim.authoritativeMaxHp,
+        'the party portrait snapshot should carry zero HP as a negative health delta'
     );
     assert.equal(otherRoomStranger.sentPackets.some((packet) => packet.id === 0x78), false);
 
@@ -1171,7 +1277,7 @@ async function testPartySharedDungeonDestroyKeepsJoinerDeathState(): Promise<voi
     assert.equal(watcher.entities.get(hostile.id)?.entState, EntityState.DEAD);
 }
 
-async function testOutdoorEntityDestroyStaysOwnerLocal(): Promise<void> {
+async function testOutdoorEntityDestroySyncsToPartyOnly(): Promise<void> {
     const sender = createFakeClient(410, 'Alpha', 1);
     const partyOtherRoom = createFakeClient(411, 'Beta', 5);
     const sameRoomStranger = createFakeClient(412, 'Gamma', 1);
@@ -1214,16 +1320,21 @@ async function testOutdoorEntityDestroyStaysOwnerLocal(): Promise<void> {
     await CombatHandler.handleEntityDestroy(sender as never, bb.toBuffer());
 
     assert.equal(
-        partyOtherRoom.sentPackets.some((packet) => packet.id === 0x0D && parseDestroyEntityId(packet.payload) === hostile.id),
-        false,
-        'party mates should not receive private outdoor hostile destroy sync'
+        partyOtherRoom.sentPackets.some((packet) => {
+            if (packet.id !== 0x07) {
+                return false;
+            }
+            const state = parseEntityState(packet.payload);
+            return state.entityId === hostile.id && state.entState === EntityState.DEAD;
+        }),
+        true,
+        'party mates should receive shared outdoor hostile defeat sync'
     );
     assert.equal(
         sameRoomStranger.sentPackets.some((packet) => packet.id === 0x0D),
         false,
-        'non-party players should not receive private outdoor hostile destroy sync from another client'
+        'non-party players should not receive party outdoor hostile destroy sync from another client'
     );
-    assert.equal(partyOtherRoom.entities.has(hostile.id), true, 'party member local hostile should stay untouched');
     assert.equal(sameRoomStranger.entities.has(hostile.id), true, 'non-party local hostile should stay untouched');
 }
 
@@ -1688,7 +1799,7 @@ async function main(): Promise<void> {
         GlobalState.entityLifeNonces.clear();
         GlobalState.entityLastRewardNonces.clear();
 
-        await testBakedOutdoorHostileHitsStayOwnerLocal();
+        await testBakedOutdoorHostileHitsSyncToPartyOnly();
 
         GlobalState.sessionsByToken.clear();
         GlobalState.levelEntities.clear();
@@ -1733,7 +1844,7 @@ async function main(): Promise<void> {
         GlobalState.entityLifeNonces.clear();
         GlobalState.entityLastRewardNonces.clear();
 
-        await testOutdoorEntityDestroyStaysOwnerLocal();
+        await testOutdoorEntityDestroySyncsToPartyOnly();
 
         GlobalState.sessionsByToken.clear();
         GlobalState.levelEntities.clear();

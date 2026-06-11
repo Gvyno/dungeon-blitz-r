@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import * as path from 'path';
 import { createKeepTutorialState } from '../core/Client';
+import { GameData } from '../core/GameData';
 import { GlobalState } from '../core/GlobalState';
 import { LevelConfig } from '../core/LevelConfig';
 import { Entity } from '../core/Entity';
@@ -60,6 +61,9 @@ function ensureLevelConfigLoaded(): void {
     }
     if (NpcLoader.getRawNpcsForLevel('TutorialDungeon').length === 0) {
         NpcLoader.load(path.resolve(__dirname, '../data'));
+    }
+    if (!GameData.getEntType('GoblinDagger')) {
+        GameData.load(path.resolve(__dirname, '../data'));
     }
 }
 
@@ -121,6 +125,15 @@ function parseLevelState(payload: Buffer): { key: string; value: string } {
     return {
         key: br.readMethod26(),
         value: br.readMethod26()
+    };
+}
+
+function parseLevelUpdatePacket(payload: Buffer): { id: number; level: number; healthDelta: number } {
+    const br = new BitReader(payload);
+    return {
+        id: br.readMethod4(),
+        level: br.readMethod6(Entity.MAX_CHAR_LEVEL_BITS),
+        healthDelta: br.readMethod45()
     };
 }
 
@@ -484,14 +497,17 @@ function testOutdoorHostileClientSpawnIsNotSeededToPeers(): void {
     assert.equal(client.entities.size, 1, 'existing local hostile should remain untouched');
 }
 
-function testOutdoorHostileClientSpawnStaysPrivateToPartyPeers(): void {
+function testOutdoorHostileClientSpawnSeedsToPartyPeersOnly(): void {
     const owner = createFakeClient('Alpha');
     const watcher = createFakeClient('Beta');
+    const stranger = createFakeClient('Gamma');
 
     owner.currentLevel = 'NewbieRoad';
     watcher.currentLevel = 'NewbieRoad';
+    stranger.currentLevel = 'NewbieRoad';
     owner.currentRoomId = 1;
     watcher.currentRoomId = 7;
+    stranger.currentRoomId = 1;
 
     const hostile: any = {
         id: 2204,
@@ -504,20 +520,40 @@ function testOutdoorHostileClientSpawnStaysPrivateToPartyPeers(): void {
         entState: 0,
         clientSpawned: true,
         ownerToken: owner.token,
+        ownerPartyId: 77,
         roomId: owner.currentRoomId
     };
 
     GlobalState.levelEntities.set('NewbieRoad', new Map([[hostile.id, hostile]]));
     GlobalState.sessionsByToken.set(owner.token, owner as never);
     GlobalState.sessionsByToken.set(watcher.token, watcher as never);
+    GlobalState.sessionsByToken.set(stranger.token, stranger as never);
     GlobalState.partyByMember.set('alpha', 77);
     GlobalState.partyByMember.set('beta', 77);
 
     const known = EntityHandler.ensureEntityKnown(watcher as never, 'NewbieRoad', hostile.id);
+    const strangerKnown = EntityHandler.ensureEntityKnown(stranger as never, 'NewbieRoad', hostile.id);
+    const strangerDuplicate = {
+        ...hostile,
+        id: 2205,
+        ownerToken: stranger.token,
+        ownerPartyId: 0,
+        roomId: stranger.currentRoomId
+    };
+    const strangerSuppressed = (EntityHandler as any).suppressDuplicateSharedClientSpawn(
+        stranger as never,
+        'NewbieRoad',
+        GlobalState.levelEntities.get('NewbieRoad'),
+        strangerDuplicate
+    );
 
-    assert.equal(known, false, 'party peers should not receive outdoor hostile seeds');
-    assert.deepEqual(watcher.sentPackets.map((packet) => packet.id), []);
-    assert.equal(watcher.knownEntityIds.has(hostile.id), false);
+    assert.equal(known, true, 'party peers should receive outdoor hostile seeds');
+    assert.deepEqual(watcher.sentPackets.map((packet) => packet.id), [0x0F]);
+    assert.equal(watcher.knownEntityIds.has(hostile.id), true);
+    assert.equal(strangerKnown, false, 'non-party outdoor viewers should not receive party hostile seeds');
+    assert.equal(strangerSuppressed, false, 'non-party outdoor hostiles should not adopt the party canonical enemy');
+    assert.equal(stranger.entityIdAliases.has(strangerDuplicate.id), false);
+    assert.equal(stranger.sentPackets.length, 0);
 }
 
 function testDungeonHostileClientSpawnSeedsToPartyPeersOnly(): void {
@@ -822,7 +858,7 @@ function testOutdoorNpcSpawnsStayPrivateToOwner(): void {
     assert.equal(follower.entities.has(3401), false);
 }
 
-function testOutdoorHostileSpawnsStayPrivateToOwner(): void {
+function testOutdoorHostileSpawnsShareWithParty(): void {
     const owner = createFakeClient('Alpha');
     const follower = createFakeClient('Beta');
 
@@ -876,12 +912,14 @@ function testOutdoorHostileSpawnsStayPrivateToOwner(): void {
     );
 
     const levelMap = GlobalState.levelEntities.get('NewbieRoad');
-    assert.equal(known, false, 'party peers should not receive private outdoor hostile seeds');
-    assert.equal(suppressed, false, 'private outdoor hostile spawns should not collapse to a party canonical entity');
-    assert.equal(levelMap?.size, 1, 'the owner hostile should remain isolated in the shared level map');
-    assert.deepEqual(follower.sentPackets, [], 'private outdoor hostiles should not emit destroy/adopt packets to party peers');
-    assert.equal(follower.knownEntityIds.has(canonical.id), false);
-    assert.equal(follower.entities.has(3402), false);
+    assert.equal(known, true, 'party peers should receive outdoor hostile seeds');
+    assert.equal(suppressed, true, 'party outdoor hostile spawns should collapse to a canonical entity');
+    assert.equal(levelMap?.size, 1, 'the owner hostile should remain the only shared level-map entity');
+    assert.deepEqual(follower.sentPackets.map((packet) => packet.id), [0x0F]);
+    assert.equal(follower.knownEntityIds.has(canonical.id), true);
+    assert.equal(follower.knownEntityIds.has(3402), false);
+    assert.equal(follower.entityIdAliases.get(3402), canonical.id);
+    assert.equal(follower.entities.get(3402)?.sharedCanonicalId, canonical.id);
 }
 
 function testDungeonPartyAuthoritySuppressesDuplicateTargetDummySpawns(): void {
@@ -2279,7 +2317,7 @@ function testOutdoorHostileIncrementalUpdatesDoNotRelayToPartyPeers(): void {
     assert.equal(
         watcher.sentPackets.some((packet) => packet.id === 0x07 || packet.id === 0x0F),
         false,
-        'private outdoor hostile movement should remain owner-local even for party mates in the same level'
+        'shared outdoor hostile movement should remain client-local even for party mates in the same level'
     );
 }
 
@@ -2718,8 +2756,9 @@ function testDungeonClientSpawnHostilesUseMaxPartyRuntimeLevel(): void {
     const low = createFakeClient('Lowbie', 12);
     const high = createFakeClient('Fifty', 50);
     low.currentLevel = 'GoblinRiverDungeon';
-    high.currentLevel = 'CraftTown';
+    high.currentLevel = 'GoblinRiverDungeon';
     low.levelInstanceId = 'party-scaled-run';
+    high.levelInstanceId = 'party-scaled-run';
     low.clientEntID = 9101;
     high.clientEntID = 9102;
 
@@ -2743,6 +2782,37 @@ function testDungeonClientSpawnHostilesUseMaxPartyRuntimeLevel(): void {
     (EntityHandler as any).applyRuntimeDungeonEntityLevel(low as never, low.currentLevel, hostile);
 
     assert.equal(hostile.level, 50, 'party dungeon hostiles should scale to the highest live party member level');
+}
+
+function testPartyMemberOutsideLevelScopeDoesNotScaleHostiles(): void {
+    const low = createFakeClient('Lowbie', 12);
+    const high = createFakeClient('Fifty', 50);
+    low.currentLevel = 'GoblinRiverDungeon';
+    high.currentLevel = 'CraftTown';
+    low.levelInstanceId = 'party-scope-run';
+    low.clientEntID = 9151;
+    high.clientEntID = 9152;
+
+    GlobalState.sessionsByToken.set(low.token, low as never);
+    GlobalState.sessionsByToken.set(high.token, high as never);
+    GlobalState.partyByMember.set('lowbie', 307);
+    GlobalState.partyByMember.set('fifty', 307);
+    GlobalState.partyGroups.set(307, { id: 307, leader: 'Lowbie', members: ['Lowbie', 'Fifty'], locked: false });
+
+    const hostile: any = {
+        id: 9153,
+        name: 'GoblinDagger',
+        isPlayer: false,
+        x: 200,
+        y: 300,
+        v: 0,
+        team: 2,
+        entState: 0
+    };
+
+    (EntityHandler as any).applyRuntimeDungeonEntityLevel(low as never, low.currentLevel, hostile);
+
+    assert.equal(hostile.level, 12, 'party members outside the live level scope should not scale current enemies');
 }
 
 function testJoiningHighLevelPartyMemberRescalesExistingDungeonHostiles(): void {
@@ -2771,16 +2841,96 @@ function testJoiningHighLevelPartyMemberRescalesExistingDungeonHostiles(): void 
         clientSpawned: true,
         ownerToken: low.token,
         ownerPartyId: 306,
-        level: 12
+        level: 12,
+        partySize: 1
     };
     GlobalState.levelEntities.set('GoblinRiverDungeon#rescale-run', new Map<number, any>([[hostile.id, hostile]]));
     low.entities.set(hostile.id, { ...hostile });
 
     const updatedCount = EntityHandler.rescaleDungeonEntitiesForParty(high as never);
     const scaledHostile = GlobalState.levelEntities.get('GoblinRiverDungeon#rescale-run')?.get(9201);
+    assert.ok(scaledHostile, 'scaled hostile should stay in the shared level map');
     assert.equal(updatedCount, 1);
     assert.equal(scaledHostile?.level, 50, 'joining high-level party member should raise existing shared hostile level');
+    assert.equal(scaledHostile?.partySize, 2, 'same-scope party size should scale shared hostile HP');
+    assert.ok(Number(scaledHostile?.maxHp ?? 0) > 0, 'scaled hostile should track max HP');
+    assert.ok(Number(scaledHostile?.armorClass ?? 0) > 0, 'scaled hostile should track armor/defense');
     assert.equal(low.entities.get(hostile.id)?.level, 50, 'owner local entity cache should be raised with the shared hostile');
+
+    const levelUpdate = low.sentPackets.find((packet) => packet.id === 0x39);
+    assert.ok(levelUpdate, 'owner should receive a level-update packet when server scaling changes its local hostile');
+    assert.deepEqual(
+        parseLevelUpdatePacket(levelUpdate.payload),
+        { id: hostile.id, level: 50, healthDelta: 0 }
+    );
+
+    const highMaxHp = Math.round(Number(scaledHostile?.maxHp ?? 0));
+    const damagedHp = Math.max(1, Math.round(highMaxHp * 0.4));
+    scaledHostile.hp = damagedHp;
+    scaledHostile.healthDelta = damagedHp - highMaxHp;
+    scaledHostile.health_delta = scaledHostile.healthDelta;
+    low.entities.set(hostile.id, { ...scaledHostile });
+    low.sentPackets = [];
+
+    high.currentLevel = 'CraftTown';
+    high.levelInstanceId = '';
+    const downscaledCount = EntityHandler.rescaleDungeonEntitiesForParty(low as never);
+    const downscaledHostile = GlobalState.levelEntities.get('GoblinRiverDungeon#rescale-run')?.get(9201);
+    const lowMaxHp = Math.round(Number(downscaledHostile?.maxHp ?? 0));
+    const expectedPreservedHp = Math.max(1, Math.round(lowMaxHp * (damagedHp / highMaxHp)));
+
+    assert.equal(downscaledCount, 1);
+    assert.equal(downscaledHostile?.level, 12, 'leaving the live scope should lower existing shared hostile level');
+    assert.equal(downscaledHostile?.partySize, 1, 'party size should recompute downward when a member exits the scope');
+    assert.ok(lowMaxHp > 0 && lowMaxHp < highMaxHp, 'downscaled hostile max HP should decrease');
+    assert.equal(downscaledHostile?.hp, expectedPreservedHp, 'downscaling should preserve the current HP percentage');
+    assert.equal(low.entities.get(hostile.id)?.hp, expectedPreservedHp, 'owner local entity HP should follow the shared scaled state');
+}
+
+function testDeadSharedHostilesRemainDeadDuringPartyScaling(): void {
+    const low = createFakeClient('Lowbie', 12);
+    const high = createFakeClient('Fifty', 50);
+    low.currentLevel = 'GoblinRiverDungeon';
+    high.currentLevel = 'GoblinRiverDungeon';
+    low.levelInstanceId = 'dead-rescale-run';
+    high.levelInstanceId = 'dead-rescale-run';
+
+    GlobalState.sessionsByToken.set(low.token, low as never);
+    GlobalState.sessionsByToken.set(high.token, high as never);
+    GlobalState.partyByMember.set('lowbie', 308);
+    GlobalState.partyByMember.set('fifty', 308);
+    GlobalState.partyGroups.set(308, { id: 308, leader: 'Lowbie', members: ['Lowbie', 'Fifty'], locked: false });
+
+    const hostile = {
+        id: 9251,
+        name: 'GoblinDagger',
+        isPlayer: false,
+        x: 200,
+        y: 300,
+        v: 0,
+        team: 2,
+        entState: 0,
+        clientSpawned: true,
+        ownerToken: low.token,
+        ownerPartyId: 308,
+        level: 12,
+        maxHp: 1000,
+        hp: 0,
+        healthDelta: -1000,
+        health_delta: -1000,
+        dead: true
+    };
+    GlobalState.levelEntities.set('GoblinRiverDungeon#dead-rescale-run', new Map<number, any>([[hostile.id, hostile]]));
+    low.entities.set(hostile.id, { ...hostile });
+
+    const updatedCount = EntityHandler.rescaleDungeonEntitiesForParty(high as never);
+    const scaledHostile = GlobalState.levelEntities.get('GoblinRiverDungeon#dead-rescale-run')?.get(9251);
+
+    assert.equal(updatedCount, 1);
+    assert.equal(scaledHostile?.level, 50, 'dead hostile stats should still recompute to the party runtime level');
+    assert.equal(scaledHostile?.hp, 0, 'dead hostile should remain at 0 HP after scaling');
+    assert.equal(scaledHostile?.dead, true, 'dead hostile should stay dead after scaling');
+    assert.equal(scaledHostile?.entState, 3, 'dead hostile should keep the dead entity state after scaling');
 }
 
 async function main(): Promise<void> {
@@ -2841,7 +2991,8 @@ async function main(): Promise<void> {
         GlobalState.levelEntities.clear();
         GlobalState.sessionsByToken.clear();
         GlobalState.partyByMember.clear();
-        testOutdoorHostileClientSpawnStaysPrivateToPartyPeers();
+        GlobalState.partyGroups.clear();
+        testOutdoorHostileClientSpawnSeedsToPartyPeersOnly();
 
         GlobalState.levelEntities.clear();
         GlobalState.sessionsByToken.clear();
@@ -2893,7 +3044,8 @@ async function main(): Promise<void> {
         GlobalState.levelEntities.clear();
         GlobalState.sessionsByToken.clear();
         GlobalState.partyByMember.clear();
-        testOutdoorHostileSpawnsStayPrivateToOwner();
+        GlobalState.partyGroups.clear();
+        testOutdoorHostileSpawnsShareWithParty();
 
         GlobalState.levelEntities.clear();
         GlobalState.sessionsByToken.clear();
@@ -3080,7 +3232,19 @@ async function main(): Promise<void> {
         GlobalState.sessionsByToken.clear();
         GlobalState.partyByMember.clear();
         GlobalState.partyGroups.clear();
+        testPartyMemberOutsideLevelScopeDoesNotScaleHostiles();
+
+        GlobalState.levelEntities.clear();
+        GlobalState.sessionsByToken.clear();
+        GlobalState.partyByMember.clear();
+        GlobalState.partyGroups.clear();
         testJoiningHighLevelPartyMemberRescalesExistingDungeonHostiles();
+
+        GlobalState.levelEntities.clear();
+        GlobalState.sessionsByToken.clear();
+        GlobalState.partyByMember.clear();
+        GlobalState.partyGroups.clear();
+        testDeadSharedHostilesRemainDeadDuringPartyScaling();
     } finally {
         GlobalState.levelEntities = levelEntities;
         GlobalState.sessionsByToken = sessionsByToken;

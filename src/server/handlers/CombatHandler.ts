@@ -563,7 +563,24 @@ export class CombatHandler {
             entity?.character_name ??
             ''
         ).replace(/\s+/g, '_');
+        const suppressedDetailKeys = new Set([
+            'actualHeal',
+            'amount',
+            'authHp',
+            'authMax',
+            'currentHp',
+            'entityHp',
+            'healthDelta',
+            'healAmount',
+            'hp',
+            'maxHp',
+            'nextHp',
+            'previousHp',
+            'rawHp',
+            'requestedHeal'
+        ]);
         const formattedDetails = Object.entries(details)
+            .filter(([detailKey]) => !suppressedDetailKeys.has(detailKey))
             .map(([detailKey, value]) => `${detailKey}=${String(value)}`)
             .join(' ');
         console.log(
@@ -2184,6 +2201,13 @@ export class CombatHandler {
         return EntityHandler.shouldMirrorClientSpawnEntityToParty(levelName, entity);
     }
 
+    private static isOwnerlessClientSpawnEntity(entity: any): boolean {
+        return Boolean(entity?.clientSpawned) &&
+            !Boolean(entity?.isPlayer) &&
+            Math.round(Number(entity?.ownerToken ?? 0)) <= 0 &&
+            Math.round(Number(entity?.ownerPartyId ?? 0)) <= 0;
+    }
+
     private static getCombatRecipients(anchor: Client, includeAnchor: boolean = false): Client[] {
         const recipients: Client[] = [];
         const levelScope = getClientLevelScope(anchor);
@@ -2220,7 +2244,14 @@ export class CombatHandler {
 
         const canonicalEntity = CombatHandler.resolveLevelEntity(levelScope, entityId);
         if (CombatHandler.shouldMirrorClientSpawnEntityToParty(anchor.currentLevel, canonicalEntity)) {
-            return EntityHandler.canClientResolveCanonicalEntity(viewer, entityId);
+            if (!EntityHandler.canClientSeeEntity(viewer, canonicalEntity)) {
+                return false;
+            }
+            if (EntityHandler.canClientResolveCanonicalEntity(viewer, entityId)) {
+                return true;
+            }
+            return CombatHandler.isOwnerlessClientSpawnEntity(canonicalEntity) &&
+                EntityHandler.ensureEntityKnown(viewer, anchor.currentLevel, entityId);
         }
 
         if (EntityHandler.ensureEntityKnown(viewer, anchor.currentLevel, entityId)) {
@@ -2397,7 +2428,14 @@ export class CombatHandler {
         }
 
         if (CombatHandler.shouldMirrorClientSpawnEntityToParty(viewer.currentLevel, entity)) {
-            return EntityHandler.canClientResolveCanonicalEntity(viewer, entityId);
+            if (!EntityHandler.canClientSeeEntity(viewer, entity)) {
+                return false;
+            }
+            if (EntityHandler.canClientResolveCanonicalEntity(viewer, entityId)) {
+                return true;
+            }
+            return CombatHandler.isOwnerlessClientSpawnEntity(entity) &&
+                EntityHandler.ensureEntityKnown(viewer, viewer.currentLevel, entityId);
         }
 
         const isRoomScopedClientNpc = Boolean(
@@ -2428,17 +2466,23 @@ export class CombatHandler {
         const payload = CombatHandler.buildEntityStatePayload(targetSession.clientEntID, entState, facingLeft);
         if (roomScoped) {
             const levelScope = getClientLevelScope(targetSession);
+            const isDeathState = entState === EntityState.DEAD;
             for (const other of GlobalState.sessionsByToken.values()) {
+                const sameRoom = sharesRoomIds(other.currentRoomId, targetSession.currentRoomId);
+                const samePartyDeathSync = isDeathState && areClientsInSameParty(targetSession, other);
                 if (
                     other === targetSession ||
                     !other.playerSpawned ||
                     getClientLevelScope(other) !== levelScope ||
-                    !sharesRoomIds(other.currentRoomId, targetSession.currentRoomId) ||
+                    (!sameRoom && !samePartyDeathSync) ||
                     !CombatHandler.canViewerResolveAnchoredCombatEntity(other, targetSession, levelScope, targetSession.clientEntID)
                 ) {
                     continue;
                 }
 
+                if (samePartyDeathSync) {
+                    EntityHandler.sendPlayerSnapshotToClient(other, targetSession);
+                }
                 other.send(0x07, CombatHandler.translateOutboundPacketForViewer(other, 0x07, payload));
             }
             return;
@@ -2996,9 +3040,12 @@ export class CombatHandler {
         const minHpAfterHit = preventDeath ? 1 : 0;
         const appliedDamage = Math.max(0, Math.min(requestedDamage, currentHp - minHpAfterHit));
         const nextHp = Math.max(minHpAfterHit, currentHp - appliedDamage);
+        const healthDelta = nextHp - knownMaxHp;
 
         entity.maxHp = knownMaxHp;
         entity.hp = nextHp;
+        entity.healthDelta = healthDelta;
+        entity.health_delta = healthDelta;
         entity.dead = nextHp <= 0;
         entity.entState = nextHp <= 0 ? EntityState.DEAD : EntityState.ACTIVE;
         targetSession.entities.set(targetSession.clientEntID, entity);
@@ -3006,6 +3053,8 @@ export class CombatHandler {
         if (levelEntity && typeof levelEntity === 'object') {
             levelEntity.maxHp = knownMaxHp;
             levelEntity.hp = nextHp;
+            levelEntity.healthDelta = healthDelta;
+            levelEntity.health_delta = healthDelta;
             levelEntity.dead = entity.dead;
             levelEntity.entState = entity.entState;
         }
@@ -3595,6 +3644,8 @@ export class CombatHandler {
             ent.entState = EntityState.ACTIVE;
             ent.hp = healAmount;
             ent.maxHp = Math.max(Math.round(Number(ent.maxHp ?? 0)), healAmount);
+            ent.healthDelta = healAmount - ent.maxHp;
+            ent.health_delta = ent.healthDelta;
             ent.lastCombatActivityAt = 0;
             ent.lastCombatRegenTickAt = 0;
         }
@@ -3606,6 +3657,8 @@ export class CombatHandler {
                 levelEntity.entState = EntityState.ACTIVE;
                 levelEntity.hp = healAmount;
                 levelEntity.maxHp = Math.max(Math.round(Number(levelEntity.maxHp ?? 0)), healAmount);
+                levelEntity.healthDelta = healAmount - levelEntity.maxHp;
+                levelEntity.health_delta = levelEntity.healthDelta;
                 levelEntity.lastCombatActivityAt = 0;
                 levelEntity.lastCombatRegenTickAt = 0;
             }

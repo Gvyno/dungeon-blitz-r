@@ -109,6 +109,7 @@ export class Entity {
             dropping: Boolean(props.dropping ?? props.b_dropping),
             backpedal: Boolean(props.backpedal ?? props.b_backpedal),
             renderDepthOffset: Number(props.renderDepthOffset ?? props.render_depth_offset ?? 0),
+            healthDelta: Number(props.healthDelta ?? props.health_delta ?? 0),
             buffs: props.buffs || [],
             roomId: Number(props.roomId ?? props.room_id ?? -1),
         } as any;

@@ -700,6 +700,7 @@ export class Client {
             }
         }
 
+        EntityHandler.rescalePartyEnemiesForClientAndParty(this);
         SocialHandler.handleSessionClose(this, transferInProgress);
 
         this.clearGameplayState();

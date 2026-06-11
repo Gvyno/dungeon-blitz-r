@@ -3,6 +3,7 @@ import { BitBuffer } from '../network/protocol/bitBuffer';
 import { Client, clearClientSpawnFallbackTimer, createKeepTutorialState } from '../core/Client';
 import { BitReader } from '../network/protocol/bitReader';
 import { DebugConfig } from '../core/Debug';
+import { GameData } from '../core/GameData';
 import { GlobalState } from '../core/GlobalState';
 import { Entity, EntityProps, EntityState } from '../core/Entity';
 import { LevelConfig } from '../core/LevelConfig';
@@ -12,7 +13,7 @@ import { MissionHandler } from './MissionHandler';
 import { noteDungeonRunBossCutscene, noteDungeonRunEntitySeen } from '../core/DungeonRunStats';
 import { areClientsInSameParty, getPartyIdForClient, isClientPartyLeader, sharesRoomIds } from '../core/PartySync';
 import { areClientsInSameLevelScope, getClientLevelScope, getLevelScopeKey } from '../core/LevelScope';
-import { getPartyRuntimeLevelForClient } from '../core/RuntimeLevel';
+import { getCharacterRuntimeLevel } from '../core/RuntimeLevel';
 import { markRoomBossEntity } from '../core/RoomBossState';
 
 export class EntityHandler {
@@ -44,6 +45,18 @@ export class EntityHandler {
     ]);
     private static readonly MOUNT_SYNC_RETRY_DELAYS_MS = [0, 300, 1200, 2500, 4000];
     private static readonly CLIENT_SPAWN_JOINER_SEED_DELAYS_MS = [2500, 4500];
+    private static readonly HOSTILE_BASE_HITPOINTS = [
+        100, 4920, 5580, 6020, 6520, 7040, 7580, 8180, 8800, 9480, 10180, 10960, 11740, 12640, 13540, 14540,
+        15560, 16660, 17860, 19120, 20440, 21860, 23360, 24960, 26680, 28460, 30380, 32420, 34580, 36900, 39320,
+        41920, 44660, 47560, 50660, 53940, 57420, 61080, 64980, 69120, 73520, 78160, 83100, 88300, 93820, 99700,
+        105880, 112460, 119400, 126760, 134560
+    ] as const;
+    private static readonly HOSTILE_PARTY_HP_SCALARS = [1, 1.7, 2.4, 3.1] as const;
+    private static readonly HOSTILE_ARMOR_CLASS_BY_LEVEL = [
+        0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 256, 268, 281, 295, 309, 324, 339, 356, 373, 391, 410,
+        429, 450, 472, 494, 518, 543, 569, 597, 625, 655, 687, 720, 755, 791, 829, 869, 911, 954, 1000,
+        1049, 1099, 1152, 1207, 1265, 1326, 1390, 1457, 1527, 1601, 1678, 1758, 1843, 1932, 2025, 2122
+    ] as const;
     private static readonly LEADER_AUTHORITATIVE_CLIENT_SPAWN_LEVELS = new Set<string>([
         'GoblinRiverDungeon',
         'GoblinRiverDungeonHard'
@@ -108,29 +121,327 @@ export class EntityHandler {
             !EntityHandler.isEntityDead(entity);
     }
 
-    private static resolveRuntimeDungeonEntityLevel(client: Client, levelName: string | null | undefined, fallbackLevel: number = 1): number {
-        if (!LevelConfig.isDungeonLevel(levelName)) {
-            return Math.max(1, Math.min(50, Math.round(Number(fallbackLevel) || 1)));
+    private static clampEntityLevel(value: unknown, fallbackLevel: number = 1): number {
+        const fallback = Math.max(1, Math.min(50, Math.round(Number(fallbackLevel) || 1)));
+        const level = Math.round(Number(value));
+        if (!Number.isFinite(level) || level <= 0) {
+            return fallback;
         }
 
-        return getPartyRuntimeLevelForClient(client, client.character, fallbackLevel);
+        return Math.max(1, Math.min(50, level));
     }
 
-    private static applyRuntimeDungeonEntityLevel(client: Client, levelName: string | null | undefined, entity: any): void {
-        if (!entity || entity.isPlayer || !LevelConfig.isDungeonLevel(levelName)) {
+    private static getHostileBaseHpForLevel(level: number): number {
+        const maxIndex = EntityHandler.HOSTILE_BASE_HITPOINTS.length - 1;
+        const clampedLevel = Math.max(1, Math.min(maxIndex, Math.floor(Number(level) || 1)));
+        return EntityHandler.HOSTILE_BASE_HITPOINTS[clampedLevel];
+    }
+
+    private static getPartyHpScaleIndex(partySize: number): number {
+        return Math.max(0, Math.min(EntityHandler.HOSTILE_PARTY_HP_SCALARS.length - 1, Math.round(Number(partySize) || 1) - 1));
+    }
+
+    private static getEntityType(entity: any): any {
+        const entityName = String(entity?.name ?? entity?.EntName ?? entity?.entName ?? '').trim();
+        return entityName ? GameData.getEntType(entityName) ?? {} : {};
+    }
+
+    private static estimateHostileMaxHp(entity: any, level: number, partySize: number): number {
+        const entType = EntityHandler.getEntityType(entity);
+        const hitPointScale = Number(entity?.HitPoints ?? entity?.hitPoints ?? entType?.HitPoints ?? 1);
+        if (!Number.isFinite(hitPointScale) || hitPointScale <= 0) {
+            return Math.max(0, Math.round(Number(entity?.maxHp ?? 0)));
+        }
+
+        const hpScaleIndex = EntityHandler.getPartyHpScaleIndex(partySize);
+        const partyScalar = EntityHandler.HOSTILE_PARTY_HP_SCALARS[hpScaleIndex] ?? 1;
+        return Math.max(1, Math.round(EntityHandler.getHostileBaseHpForLevel(level) * hitPointScale * partyScalar));
+    }
+
+    private static estimateHostileArmorClass(entity: any, level: number): number {
+        const entType = EntityHandler.getEntityType(entity);
+        const armorScale = Number(entity?.ArmorClass ?? entity?.armorScale ?? entType?.ArmorClass ?? entType?.armorClass ?? 0);
+        if (!Number.isFinite(armorScale) || armorScale <= 0) {
+            return 0;
+        }
+
+        const index = Math.max(1, Math.min(EntityHandler.HOSTILE_ARMOR_CLASS_BY_LEVEL.length - 1, Math.floor(Number(level) || 1)));
+        return Math.max(0, Math.round((EntityHandler.HOSTILE_ARMOR_CLASS_BY_LEVEL[index] ?? 0) * armorScale));
+    }
+
+    private static isRuntimeScaledHostile(levelName: string | null | undefined, entity: any): boolean {
+        if (!levelName || !entity || entity.isPlayer || Number(entity?.team ?? 0) !== 2) {
+            return false;
+        }
+
+        if (EntityHandler.usesClientSpawn(levelName) && Boolean(entity?.clientSpawned)) {
+            return true;
+        }
+
+        return LevelConfig.isDungeonLevel(levelName);
+    }
+
+    private static getPartyScalingForClient(
+        client: Client,
+        fallbackLevel: number = 1
+    ): { runtimeLevel: number; partySize: number; hpScaleIndex: number; hpScalar: number } {
+        const ownRuntimeLevel = getCharacterRuntimeLevel(client.character, fallbackLevel);
+        const partyId = getPartyIdForClient(client);
+        if (partyId <= 0) {
+            return {
+                runtimeLevel: ownRuntimeLevel,
+                partySize: 1,
+                hpScaleIndex: 0,
+                hpScalar: EntityHandler.HOSTILE_PARTY_HP_SCALARS[0]
+            };
+        }
+
+        const levelScope = getClientLevelScope(client);
+        const memberKeys = new Set<string>();
+        let runtimeLevel = ownRuntimeLevel;
+
+        const addSession = (session: Client | null | undefined): void => {
+            if (!session?.character || !GlobalState.isSessionOpen(session) || getPartyIdForClient(session) !== partyId) {
+                return;
+            }
+            if (levelScope && getClientLevelScope(session) !== levelScope) {
+                return;
+            }
+
+            const key = String(session.character.name ?? session.token ?? '').trim().toLowerCase() || `token:${session.token}`;
+            if (memberKeys.has(key)) {
+                return;
+            }
+
+            memberKeys.add(key);
+            runtimeLevel = Math.max(runtimeLevel, getCharacterRuntimeLevel(session.character, runtimeLevel));
+        };
+
+        addSession(client);
+        for (const session of GlobalState.sessionsByToken.values()) {
+            addSession(session);
+        }
+
+        const partySize = Math.max(1, memberKeys.size);
+        const hpScaleIndex = EntityHandler.getPartyHpScaleIndex(partySize);
+        return {
+            runtimeLevel: EntityHandler.clampEntityLevel(runtimeLevel, ownRuntimeLevel),
+            partySize,
+            hpScaleIndex,
+            hpScalar: EntityHandler.HOSTILE_PARTY_HP_SCALARS[hpScaleIndex] ?? 1
+        };
+    }
+
+    private static getCurrentHostileHp(entity: any, fallbackMaxHp: number): number {
+        if (EntityHandler.isEntityDead(entity)) {
+            return 0;
+        }
+
+        const rawHp = Number(entity?.hp ?? NaN);
+        if (Number.isFinite(rawHp)) {
+            return Math.max(0, Math.min(fallbackMaxHp, Math.round(rawHp)));
+        }
+
+        const rawDelta = Number(entity?.healthDelta ?? entity?.health_delta ?? NaN);
+        if (Number.isFinite(rawDelta)) {
+            return Math.max(0, Math.min(fallbackMaxHp, Math.round(fallbackMaxHp + rawDelta)));
+        }
+
+        return fallbackMaxHp;
+    }
+
+    private static applyScalingSnapshot(target: any, source: any): void {
+        if (!target || !source) {
             return;
         }
 
-        entity.level = EntityHandler.resolveRuntimeDungeonEntityLevel(client, levelName, entity.level);
+        const fields = [
+            'level',
+            'partySize',
+            'hpScaleIndex',
+            'hpScaling',
+            'hpScalar',
+            'maxHp',
+            'hp',
+            'healthDelta',
+            'health_delta',
+            'armorClass',
+            'defense',
+            'defence',
+            'dead',
+            'entState'
+        ];
+        for (const field of fields) {
+            if (source[field] !== undefined) {
+                target[field] = source[field];
+            }
+        }
+    }
+
+    private static applyPartyScalingToEntity(client: Client, levelName: string | null | undefined, entity: any): boolean {
+        if (!EntityHandler.isRuntimeScaledHostile(levelName, entity)) {
+            return false;
+        }
+
+        const previousLevel = EntityHandler.clampEntityLevel(entity.level, entity.level ?? client.character?.level ?? 1);
+        const previousPartySize = Math.max(1, Math.round(Number(entity.partySize ?? 1)) || 1);
+        const previousMaxHp = Math.max(
+            1,
+            Math.round(Number(entity.maxHp ?? 0)) ||
+                EntityHandler.estimateHostileMaxHp(entity, previousLevel, previousPartySize) ||
+                EntityHandler.estimateHostileMaxHp(entity, previousLevel, 1) ||
+                1
+        );
+        const previousHp = EntityHandler.getCurrentHostileHp(entity, previousMaxHp);
+        const wasDead = EntityHandler.isEntityDead(entity) || previousHp <= 0;
+        const scaling = EntityHandler.getPartyScalingForClient(client, previousLevel);
+        const nextMaxHp = EntityHandler.estimateHostileMaxHp(entity, scaling.runtimeLevel, scaling.partySize) || previousMaxHp;
+        const nextArmorClass = EntityHandler.estimateHostileArmorClass(entity, scaling.runtimeLevel);
+        const nextHp = wasDead
+            ? 0
+            : Math.max(1, Math.min(nextMaxHp, Math.round((previousHp / previousMaxHp) * nextMaxHp)));
+        const nextHealthDelta = nextHp - nextMaxHp;
+
+        const changed =
+            EntityHandler.clampEntityLevel(entity.level, previousLevel) !== scaling.runtimeLevel ||
+            Math.max(1, Math.round(Number(entity.partySize ?? 1)) || 1) !== scaling.partySize ||
+            Math.round(Number(entity.maxHp ?? 0)) !== nextMaxHp ||
+            Math.round(Number(entity.hp ?? NaN)) !== nextHp ||
+            Math.round(Number(entity.healthDelta ?? entity.health_delta ?? NaN)) !== nextHealthDelta ||
+            Math.round(Number(entity.armorClass ?? 0)) !== nextArmorClass;
+
+        entity.level = scaling.runtimeLevel;
+        entity.partySize = scaling.partySize;
+        entity.hpScaleIndex = scaling.hpScaleIndex;
+        entity.hpScaling = scaling.hpScaleIndex;
+        entity.hpScalar = scaling.hpScalar;
+        entity.maxHp = nextMaxHp;
+        entity.hp = nextHp;
+        entity.healthDelta = nextHealthDelta;
+        entity.health_delta = nextHealthDelta;
+        entity.armorClass = nextArmorClass;
+        entity.defense = nextArmorClass;
+        entity.defence = nextArmorClass;
+        entity.dead = wasDead;
+        if (wasDead) {
+            entity.entState = EntityState.DEAD;
+        } else if (Number(entity.entState ?? EntityState.ACTIVE) === EntityState.DEAD) {
+            entity.entState = EntityState.ACTIVE;
+        }
+
+        return changed;
+    }
+
+    private static shouldScaleEntityForClient(client: Client, levelName: string, entity: any): boolean {
+        if (!EntityHandler.isRuntimeScaledHostile(levelName, entity)) {
+            return false;
+        }
+
+        if (Boolean(entity?.clientSpawned) && EntityHandler.usesClientSpawn(levelName)) {
+            const clientPartyId = getPartyIdForClient(client);
+            const ownerPartyId = EntityHandler.getSharedClientSpawnOwnerPartyId(entity);
+            if (clientPartyId > 0 || ownerPartyId > 0) {
+                return clientPartyId > 0 && clientPartyId === ownerPartyId;
+            }
+
+            const ownerToken = Math.round(Number(entity?.ownerToken ?? 0));
+            return ownerToken <= 0 || ownerToken === client.token;
+        }
+
+        return true;
+    }
+
+    private static sendEntityLevelUpdate(client: Client, entity: any): void {
+        const entityId = Math.max(0, Math.round(Number(entity?.id ?? 0)));
+        if (entityId <= 0) {
+            return;
+        }
+
+        const localEntityId = EntityHandler.resolveEntityLocalId(client, entityId);
+        if (
+            !client.knownEntityIds.has(entityId) &&
+            !client.entities.has(entityId) &&
+            !client.entities.has(localEntityId)
+        ) {
+            return;
+        }
+
+        if (!EntityHandler.canClientResolveCanonicalEntity(client, entityId)) {
+            return;
+        }
+
+        const bb = new BitBuffer(false);
+        bb.writeMethod4(localEntityId);
+        bb.writeMethod6(EntityHandler.clampEntityLevel(entity.level, 1), Entity.MAX_CHAR_LEVEL_BITS);
+        bb.writeMethod45(0);
+        client.sendBitBuffer(0x39, bb);
+    }
+
+    static getClientSpawnPartyHpScalingIndex(client: Client): number {
+        return EntityHandler.getPartyScalingForClient(client, client.character?.level ?? 1).hpScaleIndex;
+    }
+
+    static getClientSpawnPartyBonusLevels(client: Client, levelName: string | null | undefined): number {
+        if (!levelName || !EntityHandler.usesClientSpawn(levelName)) {
+            return 0;
+        }
+
+        const levelSpec = LevelConfig.get(levelName);
+        const baseLevel = EntityHandler.clampEntityLevel(
+            levelSpec.mapId || levelSpec.baseId || client.character?.level || 1,
+            client.character?.level ?? 1
+        );
+        const scaling = EntityHandler.getPartyScalingForClient(client, baseLevel);
+        return Math.max(0, scaling.runtimeLevel - baseLevel);
+    }
+
+    static rescalePartyEnemiesForMembers(memberNames: Iterable<string | null | undefined>): number {
+        const sessions = new Set<Client>();
+        for (const memberName of memberNames) {
+            const session = GlobalState.getActiveSessionByCharacterName(memberName);
+            if (session?.character) {
+                sessions.add(session);
+            }
+        }
+
+        let updatedCount = 0;
+        const scaledScopes = new Set<string>();
+        for (const session of sessions) {
+            const levelScope = getClientLevelScope(session);
+            const partyId = getPartyIdForClient(session);
+            const key = `${levelScope}|party:${partyId > 0 ? partyId : session.token}`;
+            if (!levelScope || scaledScopes.has(key)) {
+                continue;
+            }
+
+            scaledScopes.add(key);
+            updatedCount += EntityHandler.rescaleDungeonEntitiesForParty(session);
+        }
+
+        return updatedCount;
+    }
+
+    static rescalePartyEnemiesForClientAndParty(client: Client): number {
+        const members = new Set<string>();
+        if (client.character?.name) {
+            members.add(client.character.name);
+        }
+
+        const partyId = getPartyIdForClient(client);
+        const group = partyId > 0 ? GlobalState.partyGroups.get(partyId) : null;
+        for (const member of group?.members ?? []) {
+            members.add(member);
+        }
+
+        return EntityHandler.rescalePartyEnemiesForMembers(members);
     }
 
     static rescaleDungeonEntitiesForParty(client: Client): number {
         const levelName = client.currentLevel;
-        if (!levelName || !LevelConfig.isDungeonLevel(levelName)) {
+        if (!levelName || (!LevelConfig.isDungeonLevel(levelName) && !EntityHandler.usesClientSpawn(levelName))) {
             return 0;
         }
 
-        const runtimeLevel = EntityHandler.resolveRuntimeDungeonEntityLevel(client, levelName, 1);
         const levelScope = getClientLevelScope(client);
         const levelMap = GlobalState.levelEntities.get(levelScope);
         if (!levelMap) {
@@ -142,29 +453,44 @@ export class EntityHandler {
             if (!entity || entity.isPlayer) {
                 continue;
             }
-
-            const currentLevel = Math.max(1, Math.round(Number(entity.level ?? 0) || 1));
-            if (currentLevel >= runtimeLevel) {
+            if (!EntityHandler.shouldScaleEntityForClient(client, levelName, entity)) {
                 continue;
             }
 
-            entity.level = runtimeLevel;
+            const changed = EntityHandler.applyPartyScalingToEntity(client, levelName, entity);
+            if (!changed) {
+                continue;
+            }
+
             for (const session of GlobalState.sessionsByToken.values()) {
                 if (!session.playerSpawned || getClientLevelScope(session) !== levelScope) {
                     continue;
                 }
-
-                const localEntity = session.entities.get(entityId);
-                if (!localEntity || localEntity.isPlayer) {
+                if (!EntityHandler.canClientSeeEntity(session, entity)) {
                     continue;
                 }
 
-                localEntity.level = runtimeLevel;
+                const localEntity = session.entities.get(entityId);
+                if (localEntity && !localEntity.isPlayer) {
+                    EntityHandler.applyScalingSnapshot(localEntity, entity);
+                }
+
+                const localId = EntityHandler.resolveEntityLocalId(session, entityId);
+                const aliasedEntity = localId !== entityId ? session.entities.get(localId) : null;
+                if (aliasedEntity && !aliasedEntity.isPlayer) {
+                    EntityHandler.applyScalingSnapshot(aliasedEntity, entity);
+                }
+
+                EntityHandler.sendEntityLevelUpdate(session, entity);
             }
             updatedCount++;
         }
 
         return updatedCount;
+    }
+
+    private static applyRuntimeDungeonEntityLevel(client: Client, levelName: string | null | undefined, entity: any): boolean {
+        return EntityHandler.applyPartyScalingToEntity(client, levelName, entity);
     }
 
     private static isPrivateClientSpawnOutdoorEntity(levelName: string | null | undefined, entity: any): boolean {
@@ -178,7 +504,7 @@ export class EntityHandler {
 
         const team = Number(entity?.team ?? 0);
         return (
-            (team === 2 || team === 3) &&
+            team === 3 &&
             EntityHandler.usesClientSpawn(levelName) &&
             !LevelConfig.isDungeonLevel(levelName)
         );
@@ -202,7 +528,7 @@ export class EntityHandler {
 
         const team = Number(entity?.team ?? 0);
         if (team === 2) {
-            return LevelConfig.isDungeonLevel(levelName);
+            return EntityHandler.usesClientSpawn(levelName) || LevelConfig.isDungeonLevel(levelName);
         }
 
         if (team === 3) {
@@ -366,10 +692,13 @@ export class EntityHandler {
             if (Number(candidate?.ownerToken ?? 0) === excludedOwnerToken) {
                 continue;
             }
+            const candidatePartyId = EntityHandler.getSharedClientSpawnOwnerPartyId(candidate);
             if (partyId > 0) {
-                if (EntityHandler.getSharedClientSpawnOwnerPartyId(candidate) !== partyId) {
+                if (candidatePartyId !== partyId) {
                     continue;
                 }
+            } else if (candidatePartyId > 0) {
+                continue;
             }
             if (requireSharedRoom && !sharesRoomIds(roomId, Number(candidate?.roomId ?? -1))) {
                 continue;
@@ -415,11 +744,11 @@ export class EntityHandler {
         }
 
         const targetTeam = Number(entity?.team ?? 0);
-        if (partyId <= 0 || targetTeam !== 2 || !LevelConfig.isDungeonLevel(levelName)) {
+        if (partyId <= 0 || targetTeam !== 2 || (!EntityHandler.usesClientSpawn(levelName) && !LevelConfig.isDungeonLevel(levelName))) {
             return null;
         }
 
-        // Joiners can be in the correct dungeon instance before their room state syncs.
+        // Joiners can be in the correct shared instance before their room state syncs.
         return EntityHandler.findBestSharedClientSpawnCanonicalMatch(
             levelName,
             levelMap,
@@ -704,6 +1033,9 @@ export class EntityHandler {
         }
 
         const partyId = getPartyIdForClient(client);
+        if (partyId <= 0 && EntityHandler.isPartySharedClientSpawnHostile(levelName, entity)) {
+            return false;
+        }
         entity.ownerPartyId = partyId;
 
         const roomId = Number.isFinite(Number(entity?.roomId)) ? Number(entity.roomId) : -1;
@@ -754,6 +1086,8 @@ export class EntityHandler {
         client.knownEntityIds.add(canonicalId);
         client.entities.set(duplicateId, {
             ...entity,
+            ...canonical,
+            id: duplicateId,
             canonicalEntityId: canonicalId,
             sharedCanonicalId: canonicalId
         });
@@ -795,6 +1129,7 @@ export class EntityHandler {
         const clientPartyId = getPartyIdForClient(client);
         const ownerPartyId = EntityHandler.getSharedClientSpawnOwnerPartyId(entity);
         const ownerSession = EntityHandler.resolveEntityOwnerSession(entity);
+        const ownerToken = Math.round(Number(entity?.ownerToken ?? 0));
         if (ownerSession?.playerSpawned && areClientsInSameLevelScope(client, ownerSession)) {
             if (ownerSession === client) {
                 return true;
@@ -803,6 +1138,11 @@ export class EntityHandler {
             if (clientPartyId > 0 && ownerPartyId > 0 && areClientsInSameParty(client, ownerSession)) {
                 return true;
             }
+        }
+
+        if (ownerToken <= 0 && ownerPartyId <= 0) {
+            const entityRoomId = Number.isFinite(Number(entity?.roomId)) ? Number(entity.roomId) : -1;
+            return sharesRoomIds(client.currentRoomId, entityRoomId);
         }
 
         return clientPartyId > 0 && ownerPartyId > 0 && clientPartyId === ownerPartyId;
@@ -1684,7 +2024,7 @@ export class EntityHandler {
                 // bRunning etc are flags
             };
 
-        EntityHandler.applyRuntimeDungeonEntityLevel(client, levelName, props);
+        const scaledOnAccept = EntityHandler.applyRuntimeDungeonEntityLevel(client, levelName, props);
 
         if (!isPlayer) {
             client.clientSpawnConfirmed = true;
@@ -1716,6 +2056,9 @@ export class EntityHandler {
         client.entities.set(entityId, props);
         noteDungeonRunEntitySeen(client, entityId, props);
         EntityHandler.rememberEntityKnown(client, levelName, props);
+        if (!isPlayer && scaledOnAccept) {
+            EntityHandler.sendEntityLevelUpdate(client, props);
+        }
 
         // Update GlobalState
         if (levelMap) {
@@ -1909,6 +2252,20 @@ export class EntityHandler {
             }
             EntityHandler.sendEntity(other, playerEntity);
         }
+    }
+
+    static sendPlayerSnapshotToClient(viewer: Client, playerClient: Client): boolean {
+        if (!viewer?.playerSpawned || !areClientsInSameLevelScope(playerClient, viewer)) {
+            return false;
+        }
+
+        const playerEntity = EntityHandler.buildPlayerSnapshot(playerClient);
+        if (!playerEntity) {
+            return false;
+        }
+
+        EntityHandler.sendEntity(viewer, playerEntity);
+        return true;
     }
 
     private static broadcastToLevel(sender: Client, data: Buffer, entity: EntityProps): void {

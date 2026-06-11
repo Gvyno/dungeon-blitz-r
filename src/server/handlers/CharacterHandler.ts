@@ -1203,11 +1203,13 @@ export class CharacterHandler {
         const buildingStateCharacter = isVisitingAnotherPlayersCraftTown(client)
             ? client.craftTownHostCharacter
             : null;
+        const clientSpawnHpScaling = EntityHandler.getClientSpawnPartyHpScalingIndex(client);
+        const clientSpawnBonusLevels = EntityHandler.getClientSpawnPartyBonusLevels(client, entry.targetLevel);
         const pdPkt = WorldEnter.buildPlayerDataPacket(
             client.character,
             token,
-            0, 
-            0,
+            clientSpawnHpScaling,
+            clientSpawnBonusLevels,
             entry.targetLevel,
             spawn.x,
             spawn.y,

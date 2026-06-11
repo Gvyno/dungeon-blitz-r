@@ -10,6 +10,7 @@ import { GuildHandler } from './GuildHandler';
 import { LevelHandler } from './LevelHandler';
 import { MissionHandler } from './MissionHandler';
 import { PetHandler } from './PetHandler';
+import { EntityHandler } from './EntityHandler';
 import { DialogueTranslationLoader } from '../data/DialogueTranslationLoader';
 import { discordSocialBridge } from '../integrations/DiscordSocialBridge';
 import {
@@ -767,6 +768,10 @@ export class SocialHandler {
         return [...group.members];
     }
 
+    private static rescalePartyEnemyScopes(members: Iterable<string | null | undefined>): void {
+        EntityHandler.rescalePartyEnemiesForMembers(members);
+    }
+
     private static getPartyMapPosition(client: Client): { x: number; y: number } {
         return {
             x: Math.max(0, Math.round(Number(client.partyMapX ?? 0))),
@@ -1020,6 +1025,7 @@ export class SocialHandler {
         }
 
         SocialHandler.addPartyMember(group, requesterDisplayName);
+        SocialHandler.rescalePartyEnemyScopes(group.members);
         SocialHandler.broadcastPartyUpdateById(targetPartyId);
 
         return {
@@ -1419,6 +1425,7 @@ export class SocialHandler {
         }
 
         SocialHandler.addPartyMember(group, inviteeName);
+        SocialHandler.rescalePartyEnemyScopes(group.members);
         SocialHandler.broadcastPartyUpdateById(partyId);
     }
 
@@ -1469,6 +1476,7 @@ export class SocialHandler {
         }
 
         SocialHandler.addPartyMember(targetParty.group, requesterName);
+        SocialHandler.rescalePartyEnemyScopes(targetParty.group.members);
         SocialHandler.broadcastPartyUpdateById(targetParty.partyId);
     }
 
@@ -1486,6 +1494,7 @@ export class SocialHandler {
 
         const oldMembers = [...party.group.members];
         SocialHandler.removePartyMember(leavingName);
+        SocialHandler.rescalePartyEnemyScopes(oldMembers);
         SocialHandler.sendEmptyPartyUpdate(client);
         SocialHandler.sendChatStatus(client, 'You left the party.');
 
@@ -1504,6 +1513,7 @@ export class SocialHandler {
         if (!refreshed || refreshed.members.length <= 1) {
             const finalMembers = refreshed ? SocialHandler.disbandParty(party.partyId) : [];
             const everyoneToClear = new Set<string>([...oldMembers, ...finalMembers]);
+            SocialHandler.rescalePartyEnemyScopes(everyoneToClear);
             everyoneToClear.delete(leavingName);
             for (const member of everyoneToClear) {
                 SocialHandler.sendEmptyPartyUpdate(SocialHandler.getOnlineSession(member));
@@ -1554,6 +1564,7 @@ export class SocialHandler {
         const oldMembers = [...party.group.members];
         const targetSession = SocialHandler.getOnlineSession(targetMember);
         SocialHandler.removePartyMember(targetMember);
+        SocialHandler.rescalePartyEnemyScopes(oldMembers);
         SocialHandler.sendEmptyPartyUpdate(targetSession);
         SocialHandler.sendChatStatus(targetSession, `You were kicked from ${actorName}'s party.`);
 
@@ -1575,6 +1586,7 @@ export class SocialHandler {
         if (!refreshed || refreshed.members.length <= 1) {
             const finalMembers = refreshed ? SocialHandler.disbandParty(party.partyId) : [];
             const everyoneToClear = new Set<string>([...oldMembers, ...finalMembers]);
+            SocialHandler.rescalePartyEnemyScopes(everyoneToClear);
             everyoneToClear.delete(targetMember);
             for (const member of everyoneToClear) {
                 SocialHandler.sendEmptyPartyUpdate(SocialHandler.getOnlineSession(member));
