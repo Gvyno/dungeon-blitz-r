@@ -417,7 +417,7 @@ export class BuildingHandler {
             9: BuildingID.NecromancerTower
          };
          const CLASS_TOWER_BUILDINGS: Record<string, number[]> = {
-            paladin: [BuildingID.JusticarTower, BuildingID.SentinelTower, BuildingID.TemplarTower],
+            paladin: [BuildingID.SentinelTower, BuildingID.JusticarTower, BuildingID.TemplarTower],
             mage: [BuildingID.FrostwardenTower, BuildingID.FlameseerTower, BuildingID.NecromancerTower],
             rogue: [BuildingID.ExecutionerTower, BuildingID.ShadowwalkerTower, BuildingID.SoulthiefTower]
          };

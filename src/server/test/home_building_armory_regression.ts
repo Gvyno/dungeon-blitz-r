@@ -627,7 +627,7 @@ function testVisitedHomePlayerDataUsesHostBuildingClassOrder(): void {
 
     assert.deepEqual(
         WorldEnter.getPlayerDataBuildingOrder(visitor, owner),
-        [2, 12, 3, 4, 5, 1, 13],
+        [2, 12, 4, 3, 5, 1, 13],
         'visited Home extended player data should serialize building ranks using the owner class buildings'
     );
     assert.notDeepEqual(

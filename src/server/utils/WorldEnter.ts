@@ -28,7 +28,7 @@ export class WorldEnter {
 
     private static readonly CLASS_TOWER_BUILDINGS: Record<string, number[]> = {
         rogue: [BuildingID.ExecutionerTower, BuildingID.ShadowwalkerTower, BuildingID.SoulthiefTower],
-        paladin: [BuildingID.JusticarTower, BuildingID.SentinelTower, BuildingID.TemplarTower],
+        paladin: [BuildingID.SentinelTower, BuildingID.JusticarTower, BuildingID.TemplarTower],
         mage: [BuildingID.FrostwardenTower, BuildingID.FlameseerTower, BuildingID.NecromancerTower]
     };
 
@@ -442,7 +442,7 @@ export class WorldEnter {
             ? [2, 12, 6, 7, 8, 1, 13]
             : className === 'rogue'
                 ? [2, 12, 9, 10, 11, 1, 13]
-                : [2, 12, 3, 4, 5, 1, 13];
+                : [2, 12, 4, 3, 5, 1, 13];
     }
 
     static resolveMasterClass(char: Character): number {
