@@ -5,6 +5,11 @@ import { UserAccount, Character } from '../database/Database';
 import { JsonAdapter } from '../database/JsonAdapter';
 import { DebugLogger } from './Debug';
 import type { DungeonRunStats } from './DungeonRunStats';
+import {
+    clearStoredDungeonSnapshot,
+    createStoredDungeonSnapshot,
+    setStoredDungeonSnapshot
+} from './DungeonSnapshot';
 import { LevelConfig } from './LevelConfig';
 
 const db = new JsonAdapter();
@@ -581,6 +586,26 @@ export class Client {
     private repairDungeonLocationBeforeSave(): void {
         if (!this.character) {
             return;
+        }
+
+        const dungeonSnapshot = createStoredDungeonSnapshot({
+            character: this.character,
+            currentLevel: this.currentLevel,
+            levelInstanceId: this.levelInstanceId,
+            entryLevel: this.entryLevel,
+            entryX: this.entryX,
+            entryY: this.entryY,
+            entryHasCoord: this.entryHasCoord,
+            currentRoomId: this.currentRoomId,
+            startedRoomEvents: this.startedRoomEvents,
+            syncAnchorStartedAt: this.syncAnchorStartedAt,
+            clientEntID: this.clientEntID,
+            entities: this.entities
+        });
+        if (dungeonSnapshot) {
+            setStoredDungeonSnapshot(this.character, dungeonSnapshot);
+        } else if (!LevelConfig.isDungeonLevel(this.currentLevel || this.character.CurrentLevel?.name)) {
+            clearStoredDungeonSnapshot(this.character);
         }
 
         const safeReturn = LevelConfig.resolveDungeonSafeReturn(

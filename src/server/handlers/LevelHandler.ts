@@ -17,6 +17,7 @@ import {
     noteDungeonRunCompletionProgress,
     noteDungeonRunEntitySeen
 } from '../core/DungeonRunStats';
+import { clearStoredDungeonSnapshot } from '../core/DungeonSnapshot';
 import { DungeonEntryDisplay } from '../core/DungeonEntryDisplay';
 import { WorldEnter } from '../utils/WorldEnter';
 import { Config } from '../core/config';
@@ -4155,6 +4156,9 @@ export class LevelHandler {
         syncPotionReservationForLevelTransition(activeCharacter, oldLevel, targetLevel);
         client.activePotionDrainAtMs = 0;
         LevelConfig.updateSavedLevelsOnTransfer(activeCharacter, oldLevel, targetLevel, newX, newY);
+        if (!LevelConfig.isDungeonLevel(targetLevel)) {
+            clearStoredDungeonSnapshot(activeCharacter);
+        }
 
         if (client.userId) {
             await LevelHandler.saveCurrentCharacterSnapshot(client);
