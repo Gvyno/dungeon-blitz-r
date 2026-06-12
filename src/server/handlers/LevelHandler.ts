@@ -908,8 +908,14 @@ export class LevelHandler {
         'JadeCity->JadeCityHard'
     ]);
     private static readonly STORY_AREA_ENTRY_REQUIREMENTS = new Map<string, number>([
+        ['Castle->ShazariDesert', MissionID.IntoTheDepths],
+        ['CastleHard->ShazariDesertHard', MissionID.IntoTheDepthsHard],
         ['BridgeTownHard->CemeteryHillHard', MissionID.OldHeroesNeverDieHard],
         ['BridgeTownHard->OldMineMountainHard', MissionID.DerelictionOfDutyHard]
+    ]);
+    private static readonly STORY_AREA_ENTRY_MIN_STATES = new Map<string, number>([
+        ['Castle->ShazariDesert', LevelHandler.MISSION_IN_PROGRESS],
+        ['CastleHard->ShazariDesertHard', LevelHandler.MISSION_IN_PROGRESS]
     ]);
     private static readonly KEEP_TUTORIAL_BOSS_TRIGGER_X = Number.MAX_SAFE_INTEGER;
     private static readonly KEEP_TUTORIAL_CUTSCENE_STEP_MS = 250;
@@ -3060,7 +3066,7 @@ export class LevelHandler {
         );
     }
 
-    private static getRequiredStoryAreaEntryMission(currentLevel: string, targetLevelRaw: string | null): number {
+    private static getStoryAreaEntryRequirementKey(currentLevel: string, targetLevelRaw: string | null): string {
         const normalizedCurrentLevel =
             LevelConfig.normalizeLevelName(currentLevel) ||
             String(currentLevel ?? '').trim();
@@ -3069,16 +3075,27 @@ export class LevelHandler {
             String(targetLevelRaw || '').trim();
 
         if (!normalizedCurrentLevel || !targetLevel) {
+            return '';
+        }
+
+        return `${normalizedCurrentLevel}->${targetLevel}`;
+    }
+
+    private static getRequiredStoryAreaEntryMission(currentLevel: string, targetLevelRaw: string | null): number {
+        const requirementKey = LevelHandler.getStoryAreaEntryRequirementKey(currentLevel, targetLevelRaw);
+        if (!requirementKey) {
             return 0;
         }
 
-        return LevelHandler.STORY_AREA_ENTRY_REQUIREMENTS.get(`${normalizedCurrentLevel}->${targetLevel}`) ?? 0;
+        return LevelHandler.STORY_AREA_ENTRY_REQUIREMENTS.get(requirementKey) ?? 0;
     }
 
     private static isStoryAreaEntryUnlocked(client: Client, currentLevel: string, targetLevelRaw: string | null): boolean {
         const requiredMissionId = LevelHandler.getRequiredStoryAreaEntryMission(currentLevel, targetLevelRaw);
+        const requirementKey = LevelHandler.getStoryAreaEntryRequirementKey(currentLevel, targetLevelRaw);
+        const minState = LevelHandler.STORY_AREA_ENTRY_MIN_STATES.get(requirementKey) ?? LevelHandler.MISSION_CLAIMED;
         return requiredMissionId <= 0 ||
-            LevelHandler.getMissionState(client, requiredMissionId) >= LevelHandler.MISSION_CLAIMED;
+            LevelHandler.getMissionState(client, requiredMissionId) >= minState;
     }
 
     private static isStoryAreaTransferUnlocked(client: Client, targetLevelRaw: string | null): boolean {
@@ -3746,7 +3763,7 @@ export class LevelHandler {
             rawTargetLevel &&
             !LevelHandler.isStoryAreaEntryUnlocked(client, currentLevel, rawTargetLevel)
         ) {
-            console.log(`[Level] Open Door ${doorId} in ${currentLevel} blocked until the required story area mission is claimed`);
+            console.log(`[Level] Open Door ${doorId} in ${currentLevel} blocked until the required story area mission state is reached`);
             LevelHandler.sendDeniedDoorResponse(client, doorId, rawTargetLevel, LevelHandler.LOCKED_STORY_AREA_ENTRY_MESSAGE, true);
             return;
         }
@@ -4062,7 +4079,7 @@ export class LevelHandler {
         }
 
         if (!teleportOverride && !LevelHandler.isStoryAreaTransferUnlocked(client, targetLevel)) {
-            console.log(`[Level] Transfer to ${targetLevel} blocked until the required story area mission is claimed`);
+            console.log(`[Level] Transfer to ${targetLevel} blocked until the required story area mission state is reached`);
             LevelHandler.sendDeniedDoorResponse(
                 client,
                 client.lastDoorId,

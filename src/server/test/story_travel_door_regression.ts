@@ -167,6 +167,14 @@ const QUEST_LOCKED_DUNGEON_DOOR_CASES: QuestLockedDungeonDoorCase[] = [
 ];
 
 function getRequiredDirectTravelMission(currentLevel: string, travelTarget: string): MissionID | null {
+    if (currentLevel === 'Castle' && travelTarget === 'ShazariDesert') {
+        return MissionID.IntoTheDepths;
+    }
+
+    if (currentLevel === 'CastleHard' && travelTarget === 'ShazariDesertHard') {
+        return MissionID.IntoTheDepthsHard;
+    }
+
     if (currentLevel === 'BridgeTownHard' && travelTarget === 'CemeteryHillHard') {
         return MissionID.OldHeroesNeverDieHard;
     }
@@ -467,6 +475,57 @@ function testDreadShazariPortalIsReturnOnlyFromNormalSide(): void {
     );
 }
 
+function testShazariPortalRequiresTitusMissionAfterCapstone(): void {
+    const capstoneOnlyClient = createClient('Castle', MissionID.Capstone, 3);
+
+    LevelHandler.handleRequestDoorState(capstoneOnlyClient as never, createDoorPacket(4));
+    LevelHandler.handleOpenDoor(capstoneOnlyClient as never, createDoorPacket(4));
+
+    assert.deepEqual(
+        decodeDoorStatePacket(latestPacket(capstoneOnlyClient, 0x42).payload),
+        {
+            doorId: 4,
+            state: 4,
+            targetLevel: 'ShazariDesert',
+            stars: 0
+        },
+        'Castle portal should stay locked after Capstone until Titus starts Into the Depths'
+    );
+    assert.equal(
+        capstoneOnlyClient.sentPackets.some((packet) => packet.id === 0x2E),
+        false,
+        'Castle portal should not transfer before Into the Depths is accepted'
+    );
+
+    const acceptedClient = createClient('Castle', MissionID.Capstone, 3);
+    acceptedClient.character.missions[String(MissionID.IntoTheDepths)] = {
+        state: 1,
+        currCount: 0
+    };
+
+    LevelHandler.handleRequestDoorState(acceptedClient as never, createDoorPacket(4));
+    LevelHandler.handleOpenDoor(acceptedClient as never, createDoorPacket(4));
+
+    assert.deepEqual(
+        decodeDoorStatePacket(latestPacket(acceptedClient, 0x42).payload),
+        {
+            doorId: 4,
+            state: 1,
+            targetLevel: 'ShazariDesert',
+            stars: 0
+        },
+        'Castle portal should become travel after Titus starts Into the Depths'
+    );
+    assert.deepEqual(
+        decodeDoorTargetPacket(latestPacket(acceptedClient, 0x2E).payload),
+        {
+            doorId: 4,
+            targetLevel: 'ShazariDesert'
+        },
+        'Castle portal should transfer after Into the Depths is accepted'
+    );
+}
+
 async function main(): Promise<void> {
     ensureDataLoaded();
     testUnfinishedStoryDoorsStillEnterTheirDungeon();
@@ -476,6 +535,7 @@ async function main(): Promise<void> {
     testFirstTimeDungeonDoorsUseDungeonState();
     testQuestLockedDungeonDoorsRequireAcceptedMission();
     testDreadShazariPortalIsReturnOnlyFromNormalSide();
+    testShazariPortalRequiresTitusMissionAfterCapstone();
     console.log('story_travel_door_regression: ok');
 }
 
