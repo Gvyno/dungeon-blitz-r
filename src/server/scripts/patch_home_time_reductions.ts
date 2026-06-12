@@ -3,8 +3,18 @@ import * as path from 'path';
 import { ensureBackup, parseSwz, writeSwz } from './swzPatchUtils';
 
 const ROOT = path.resolve(__dirname, '..', '..', '..');
-const MIN_HOME_TIMER_SECONDS = 12 * 60 * 60;
-const MAX_HOME_TIMER_SECONDS = 3 * 24 * 60 * 60;
+const RANK_UPGRADE_TIMES_SECONDS: Record<number, number> = {
+    1: 30 * 60,
+    2: 1 * 60 * 60,
+    3: 16 * 60 * 60,
+    4: 24 * 60 * 60,
+    5: 32 * 60 * 60,
+    6: 40 * 60 * 60,
+    7: 48 * 60 * 60,
+    8: 56 * 60 * 60,
+    9: 64 * 60 * 60,
+    10: 72 * 60 * 60
+};
 const DATA_FILES = [
     {
         label: 'BuildingTypes',
@@ -23,32 +33,44 @@ const GAME_SWZ_FILES = ['Game.swz', 'Game.en.swz', 'Game.tr.swz'].map((fileName)
     path.join(ROOT, 'src', 'client', 'content', 'localhost', 'p', 'cbq', fileName)
 );
 
-function clampUpgradeTimeValue(value: string): string {
-    const numeric = Math.max(0, Math.round(Number(value || 0)));
-    if (numeric <= 0) {
-        return '0';
-    }
-    return String(Math.max(MIN_HOME_TIMER_SECONDS, Math.min(numeric, MAX_HOME_TIMER_SECONDS)));
+function getRankUpgradeTime(rank: unknown): string | null {
+    const normalizedRank = Math.max(0, Math.round(Number(rank ?? 0)));
+    const seconds = RANK_UPGRADE_TIMES_SECONDS[normalizedRank];
+    return seconds === undefined ? null : String(seconds);
 }
 
-function clampXmlUpgradeTimes(xml: string): { xml: string; changes: number } {
+function patchXmlUpgradeTimes(xml: string): { xml: string; changes: number } {
     let changes = 0;
-    const nextXml = xml.replace(/<UpgradeTime>(\d+)<\/UpgradeTime>/g, (match, value: string) => {
-        const capped = clampUpgradeTimeValue(value);
-        if (capped !== value) {
-            changes += 1;
-            return `<UpgradeTime>${capped}</UpgradeTime>`;
+    const nextXml = xml.replace(/<(Building|Ability)(?:\s[^>]*)?>[\s\S]*?<\/\1>/g, (block: string) => {
+        const rank = block.match(/<Rank>(\d+)<\/Rank>/)?.[1];
+        const upgradeTime = getRankUpgradeTime(rank);
+        if (upgradeTime === null) {
+            return block;
         }
-        return match;
+
+        return block.replace(/<UpgradeTime>(\d+)<\/UpgradeTime>/, (match, value: string) => {
+            if (value === upgradeTime) {
+                return match;
+            }
+            changes += 1;
+            return `<UpgradeTime>${upgradeTime}</UpgradeTime>`;
+        });
     });
     return { xml: nextXml, changes };
 }
 
 function verifyXmlUpgradeTimes(xml: string, label: string): void {
-    for (const match of xml.matchAll(/<UpgradeTime>(\d+)<\/UpgradeTime>/g)) {
-        const value = Number(match[1] ?? 0);
-        if (value > 0 && (value < MIN_HOME_TIMER_SECONDS || value > MAX_HOME_TIMER_SECONDS)) {
-            throw new Error(`${label} keeps UpgradeTime ${value}, outside ${MIN_HOME_TIMER_SECONDS}-${MAX_HOME_TIMER_SECONDS}`);
+    for (const blockMatch of xml.matchAll(/<(Building|Ability)(?:\s[^>]*)?>[\s\S]*?<\/\1>/g)) {
+        const block = blockMatch[0];
+        const rank = block.match(/<Rank>(\d+)<\/Rank>/)?.[1];
+        const expected = getRankUpgradeTime(rank);
+        if (expected === null) {
+            continue;
+        }
+
+        const actual = block.match(/<UpgradeTime>(\d+)<\/UpgradeTime>/)?.[1] ?? '';
+        if (actual !== expected) {
+            throw new Error(`${label} rank ${rank} keeps UpgradeTime ${actual}, expected ${expected}`);
         }
     }
 }
@@ -60,7 +82,7 @@ function patchLooseXml(filePath: string, verify: boolean): number {
         return 0;
     }
 
-    const patched = clampXmlUpgradeTimes(original);
+    const patched = patchXmlUpgradeTimes(original);
     if (patched.changes > 0) {
         fs.writeFileSync(filePath, patched.xml, 'utf8');
     }
@@ -73,16 +95,16 @@ function patchJson(filePath: string, pretty: boolean, verify: boolean): number {
     let changes = 0;
     for (const entry of data) {
         const current = String(entry.UpgradeTime ?? '0');
-        const capped = clampUpgradeTimeValue(current);
-        if (capped !== current) {
-            entry.UpgradeTime = capped;
+        const expected = getRankUpgradeTime(entry.Rank);
+        if (expected !== null && expected !== current) {
+            entry.UpgradeTime = expected;
             changes += 1;
         }
     }
 
     if (verify) {
         if (changes > 0) {
-            throw new Error(`${filePath} keeps ${changes} UpgradeTime values outside ${MIN_HOME_TIMER_SECONDS}-${MAX_HOME_TIMER_SECONDS}`);
+            throw new Error(`${filePath} keeps ${changes} UpgradeTime values outside the configured rank schedule`);
         }
         return 0;
     }
@@ -108,7 +130,7 @@ function patchGameSwz(swzPath: string, verify: boolean): number {
             continue;
         }
 
-        const patched = clampXmlUpgradeTimes(chunk.xml);
+        const patched = patchXmlUpgradeTimes(chunk.xml);
         if (patched.changes > 0) {
             chunk.xml = patched.xml;
             changes += patched.changes;
@@ -140,7 +162,7 @@ function main(): void {
     }
 
     const mode = verify ? 'Verified' : 'Patched';
-    console.log(`${mode} home timers between ${MIN_HOME_TIMER_SECONDS}s and ${MAX_HOME_TIMER_SECONDS}s (${totalChanges} changes)`);
+    console.log(`${mode} home timers by rank schedule (${totalChanges} changes)`);
 }
 
 main();

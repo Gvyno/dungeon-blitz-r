@@ -19,56 +19,56 @@
 		<Category>Assault</Category>
 		<GoldCost>219</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>3671</GoldCost>
 		<IdolCost>2</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -85,56 +85,56 @@
 		<Category>Assault</Category>
 		<GoldCost>329</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>4281</GoldCost>
 		<IdolCost>3</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -151,56 +151,56 @@
 		<Category>Assault</Category>
 		<GoldCost>438</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>4890</GoldCost>
 		<IdolCost>3</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -217,56 +217,56 @@
 		<Category>Duelist</Category>
 		<GoldCost>745</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>5594</GoldCost>
 		<IdolCost>3</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -283,56 +283,56 @@
 		<Category>Duelist</Category>
 		<GoldCost>1402</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Crowd Control</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>6297</GoldCost>
 		<IdolCost>4</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -349,56 +349,56 @@
 		<Category>Assault</Category>
 		<GoldCost>1052</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>7158</GoldCost>
 		<IdolCost>4</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -415,56 +415,56 @@
 		<Category>Assault</Category>
 		<GoldCost>1752</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>8019</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -481,56 +481,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>2191</GoldCost>
 		<IdolCost>2</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>9005</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>23413</GoldCost>
 		<IdolCost>12</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>51663</GoldCost>
 		<IdolCost>26</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>104458</GoldCost>
 		<IdolCost>41</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>199218</GoldCost>
 		<IdolCost>53</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>363370</GoldCost>
 		<IdolCost>75</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>643876</GoldCost>
 		<IdolCost>113</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1113984</GoldCost>
 		<IdolCost>137</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -547,56 +547,56 @@
 		<Category>Duelist</Category>
 		<GoldCost>0</GoldCost>
 		<IdolCost>0</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -613,56 +613,56 @@
 		<Category>Fire</Category>
 		<GoldCost>438</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>3671</GoldCost>
 		<IdolCost>2</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -679,56 +679,56 @@
 		<Category>Frost</Category>
 		<GoldCost>329</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>4281</GoldCost>
 		<IdolCost>3</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -745,56 +745,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>219</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Crowd Control</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>4890</GoldCost>
 		<IdolCost>3</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -811,56 +811,56 @@
 		<Category>Fire</Category>
 		<GoldCost>745</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>5594</GoldCost>
 		<IdolCost>3</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -877,56 +877,56 @@
 		<Category>Frost</Category>
 		<GoldCost>1402</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Crowd Control</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>6297</GoldCost>
 		<IdolCost>4</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -943,56 +943,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>1052</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>7158</GoldCost>
 		<IdolCost>4</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1009,56 +1009,56 @@
 		<Category>Fire</Category>
 		<GoldCost>1752</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>8019</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1075,56 +1075,56 @@
 		<Category>Frost</Category>
 		<GoldCost>0</GoldCost>
 		<IdolCost>0</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>9005</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>23413</GoldCost>
 		<IdolCost>12</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>51663</GoldCost>
 		<IdolCost>26</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>104458</GoldCost>
 		<IdolCost>41</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>199218</GoldCost>
 		<IdolCost>53</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>363370</GoldCost>
 		<IdolCost>75</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>643876</GoldCost>
 		<IdolCost>113</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1113984</GoldCost>
 		<IdolCost>137</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1141,56 +1141,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>2629</GoldCost>
 		<IdolCost>2</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1207,56 +1207,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>219</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>3671</GoldCost>
 		<IdolCost>2</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1273,56 +1273,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>329</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>4281</GoldCost>
 		<IdolCost>3</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1339,56 +1339,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>438</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>4890</GoldCost>
 		<IdolCost>3</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1405,56 +1405,56 @@
 		<Category>Holy</Category>
 		<GoldCost>745</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>5594</GoldCost>
 		<IdolCost>3</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1471,56 +1471,56 @@
 		<Category>Protection</Category>
 		<GoldCost>1052</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>6297</GoldCost>
 		<IdolCost>4</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1537,56 +1537,56 @@
 		<Category>Protection</Category>
 		<GoldCost>1402</GoldCost>
 		<IdolCost>1</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Crowd Control</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>7158</GoldCost>
 		<IdolCost>4</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1603,56 +1603,56 @@
 		<Category>Holy</Category>
 		<GoldCost>0</GoldCost>
 		<IdolCost>0</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>8019</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1669,56 +1669,56 @@
 		<Category>Protection</Category>
 		<GoldCost>2191</GoldCost>
 		<IdolCost>2</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>9005</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>23413</GoldCost>
 		<IdolCost>12</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>51663</GoldCost>
 		<IdolCost>26</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>104458</GoldCost>
 		<IdolCost>41</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>199218</GoldCost>
 		<IdolCost>53</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>363370</GoldCost>
 		<IdolCost>75</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>643876</GoldCost>
 		<IdolCost>113</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1113984</GoldCost>
 		<IdolCost>137</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1735,56 +1735,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>2629</GoldCost>
 		<IdolCost>2</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1801,56 +1801,56 @@
 		<Category>Frost</Category>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1989204</GoldCost>
 		<IdolCost>180</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1867,56 +1867,56 @@
 		<Category>Frost</Category>
 		<GoldCost>11107</GoldCost>
 		<IdolCost>6</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Crowd Control</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>27747</GoldCost>
 		<IdolCost>14</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>59872</GoldCost>
 		<IdolCost>30</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>119210</GoldCost>
 		<IdolCost>43</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>225210</GoldCost>
 		<IdolCost>57</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>408525</GoldCost>
 		<IdolCost>81</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>719836</GoldCost>
 		<IdolCost>117</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1239978</GoldCost>
 		<IdolCost>143</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2068772</GoldCost>
 		<IdolCost>184</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1933,56 +1933,56 @@
 		<Category>Frost</Category>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1306458</GoldCost>
 		<IdolCost>146</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2148340</GoldCost>
 		<IdolCost>186</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -1999,56 +1999,56 @@
 		<Category>Frost</Category>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1379643</GoldCost>
 		<IdolCost>150</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2234274</GoldCost>
 		<IdolCost>188</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2065,56 +2065,56 @@
 		<Category>Frost</Category>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Crowd Control</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1452827</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2320207</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2131,56 +2131,56 @@
 		<Category>Frost</Category>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1533911</GoldCost>
 		<IdolCost>158</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2413016</GoldCost>
 		<IdolCost>191</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2197,56 +2197,56 @@
 		<Category>Frost</Category>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Frost</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1614995</GoldCost>
 		<IdolCost>162</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2505824</GoldCost>
 		<IdolCost>193</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2263,56 +2263,56 @@
 		<Category>Frost</Category>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Frost</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1703688</GoldCost>
 		<IdolCost>166</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2606057</GoldCost>
 		<IdolCost>195</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2329,56 +2329,56 @@
 		<Category>Frost</Category>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Frost</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1792381</GoldCost>
 		<IdolCost>171</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2706290</GoldCost>
 		<IdolCost>197</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2395,56 +2395,56 @@
 		<Category>Frost</Category>
 		<GoldCost>15229</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Frost</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35854</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>72000</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>75112</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>146739</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>272918</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>489969</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>856599</GoldCost>
 		<IdolCost>124</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1466375</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2332443</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2461,56 +2461,56 @@
 		<Category>Assault</Category>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1989204</GoldCost>
 		<IdolCost>180</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2527,56 +2527,56 @@
 		<Category>Assault</Category>
 		<GoldCost>11107</GoldCost>
 		<IdolCost>6</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>27747</GoldCost>
 		<IdolCost>14</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>59872</GoldCost>
 		<IdolCost>30</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>119210</GoldCost>
 		<IdolCost>43</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>225210</GoldCost>
 		<IdolCost>57</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>408525</GoldCost>
 		<IdolCost>81</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>719836</GoldCost>
 		<IdolCost>117</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1239978</GoldCost>
 		<IdolCost>143</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2068772</GoldCost>
 		<IdolCost>184</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2593,56 +2593,56 @@
 		<Category>Assault</Category>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1306458</GoldCost>
 		<IdolCost>146</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2148340</GoldCost>
 		<IdolCost>186</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2659,56 +2659,56 @@
 		<Category>Assault</Category>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1379643</GoldCost>
 		<IdolCost>150</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2234274</GoldCost>
 		<IdolCost>188</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2725,56 +2725,56 @@
 		<Category>Assault</Category>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1452827</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2320207</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2791,56 +2791,56 @@
 		<Category>Assault</Category>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1533911</GoldCost>
 		<IdolCost>158</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2413016</GoldCost>
 		<IdolCost>191</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2857,56 +2857,56 @@
 		<Category>Assault</Category>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Execution</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1614995</GoldCost>
 		<IdolCost>162</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2505824</GoldCost>
 		<IdolCost>193</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2923,56 +2923,56 @@
 		<Category>Assault</Category>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Execution</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1703688</GoldCost>
 		<IdolCost>166</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2606057</GoldCost>
 		<IdolCost>195</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -2989,56 +2989,56 @@
 		<Category>Assault</Category>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Execution</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1792381</GoldCost>
 		<IdolCost>171</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2706290</GoldCost>
 		<IdolCost>197</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3055,56 +3055,56 @@
 		<Category>Assault</Category>
 		<GoldCost>15229</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Execution</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35854</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>72000</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>75112</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>146739</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>272918</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>489969</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>856599</GoldCost>
 		<IdolCost>124</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1466375</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2332443</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3121,56 +3121,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1989204</GoldCost>
 		<IdolCost>180</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3187,56 +3187,56 @@
 		<Category>Protection</Category>
 		<GoldCost>11107</GoldCost>
 		<IdolCost>6</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>27747</GoldCost>
 		<IdolCost>14</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>59872</GoldCost>
 		<IdolCost>30</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>119210</GoldCost>
 		<IdolCost>43</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>225210</GoldCost>
 		<IdolCost>57</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>408525</GoldCost>
 		<IdolCost>81</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>719836</GoldCost>
 		<IdolCost>117</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1239978</GoldCost>
 		<IdolCost>143</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2068772</GoldCost>
 		<IdolCost>184</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3253,56 +3253,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1306458</GoldCost>
 		<IdolCost>146</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2148340</GoldCost>
 		<IdolCost>186</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3319,56 +3319,56 @@
 		<Category>Protection</Category>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1379643</GoldCost>
 		<IdolCost>150</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2234274</GoldCost>
 		<IdolCost>188</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3385,56 +3385,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1452827</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2320207</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3451,56 +3451,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1533911</GoldCost>
 		<IdolCost>158</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2413016</GoldCost>
 		<IdolCost>191</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3517,56 +3517,56 @@
 		<Category>Protection</Category>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Sentry</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1614995</GoldCost>
 		<IdolCost>162</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2505824</GoldCost>
 		<IdolCost>193</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3583,56 +3583,56 @@
 		<Category>Protection</Category>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Sentry</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1703688</GoldCost>
 		<IdolCost>166</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2606057</GoldCost>
 		<IdolCost>195</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3649,56 +3649,56 @@
 		<Category>Protection</Category>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Sentry</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1792381</GoldCost>
 		<IdolCost>171</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2706290</GoldCost>
 		<IdolCost>197</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3715,56 +3715,56 @@
 		<Category>Protection</Category>
 		<GoldCost>15229</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Sentry</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35854</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>72000</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>75112</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>146739</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>272918</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>489969</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>856599</GoldCost>
 		<IdolCost>124</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1466375</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2332443</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3781,56 +3781,56 @@
 		<Category>Fire</Category>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1989204</GoldCost>
 		<IdolCost>180</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3847,56 +3847,56 @@
 		<Category>Fire</Category>
 		<GoldCost>11107</GoldCost>
 		<IdolCost>6</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>27747</GoldCost>
 		<IdolCost>14</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>59872</GoldCost>
 		<IdolCost>30</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>119210</GoldCost>
 		<IdolCost>43</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>225210</GoldCost>
 		<IdolCost>57</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>408525</GoldCost>
 		<IdolCost>81</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>719836</GoldCost>
 		<IdolCost>117</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1239978</GoldCost>
 		<IdolCost>143</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2068772</GoldCost>
 		<IdolCost>184</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3913,56 +3913,56 @@
 		<Category>Fire</Category>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1306458</GoldCost>
 		<IdolCost>146</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2148340</GoldCost>
 		<IdolCost>186</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -3979,56 +3979,56 @@
 		<Category>Fire</Category>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1379643</GoldCost>
 		<IdolCost>150</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2234274</GoldCost>
 		<IdolCost>188</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4045,56 +4045,56 @@
 		<Category>Fire</Category>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1452827</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2320207</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4111,56 +4111,56 @@
 		<Category>Fire</Category>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1533911</GoldCost>
 		<IdolCost>158</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2413016</GoldCost>
 		<IdolCost>191</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4177,56 +4177,56 @@
 		<Category>Fire</Category>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Flame</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1614995</GoldCost>
 		<IdolCost>162</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2505824</GoldCost>
 		<IdolCost>193</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4243,56 +4243,56 @@
 		<Category>Fire</Category>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Flame</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1703688</GoldCost>
 		<IdolCost>166</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2606057</GoldCost>
 		<IdolCost>195</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4309,56 +4309,56 @@
 		<Category>Fire</Category>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Flame</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1792381</GoldCost>
 		<IdolCost>171</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2706290</GoldCost>
 		<IdolCost>197</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4375,56 +4375,56 @@
 		<Category>Fire</Category>
 		<GoldCost>15229</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Flame</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35854</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>72000</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>75112</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>146739</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>272918</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>489969</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>856599</GoldCost>
 		<IdolCost>124</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1466375</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2332443</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4441,56 +4441,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Crowd Control</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1989204</GoldCost>
 		<IdolCost>180</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4507,56 +4507,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>11107</GoldCost>
 		<IdolCost>6</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>27747</GoldCost>
 		<IdolCost>14</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>59872</GoldCost>
 		<IdolCost>30</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>119210</GoldCost>
 		<IdolCost>43</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>225210</GoldCost>
 		<IdolCost>57</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>408525</GoldCost>
 		<IdolCost>81</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>719836</GoldCost>
 		<IdolCost>117</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1239978</GoldCost>
 		<IdolCost>143</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2068772</GoldCost>
 		<IdolCost>184</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4573,56 +4573,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1306458</GoldCost>
 		<IdolCost>146</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2148340</GoldCost>
 		<IdolCost>186</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4639,56 +4639,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Crowd Control</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1379643</GoldCost>
 		<IdolCost>150</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2234274</GoldCost>
 		<IdolCost>188</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4705,56 +4705,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1452827</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2320207</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4771,56 +4771,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1533911</GoldCost>
 		<IdolCost>158</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2413016</GoldCost>
 		<IdolCost>191</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4837,56 +4837,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Shadow</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1614995</GoldCost>
 		<IdolCost>162</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2505824</GoldCost>
 		<IdolCost>193</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4903,56 +4903,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Shadow</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1703688</GoldCost>
 		<IdolCost>166</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2606057</GoldCost>
 		<IdolCost>195</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -4969,56 +4969,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Shadow</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1792381</GoldCost>
 		<IdolCost>171</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2706290</GoldCost>
 		<IdolCost>197</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5035,56 +5035,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>15229</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Shadow</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35854</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>72000</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>75112</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>146739</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>272918</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>489969</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>856599</GoldCost>
 		<IdolCost>124</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1466375</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2332443</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5101,56 +5101,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1989204</GoldCost>
 		<IdolCost>180</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5167,56 +5167,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>11107</GoldCost>
 		<IdolCost>6</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>27747</GoldCost>
 		<IdolCost>14</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>59872</GoldCost>
 		<IdolCost>30</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>119210</GoldCost>
 		<IdolCost>43</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>225210</GoldCost>
 		<IdolCost>57</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>408525</GoldCost>
 		<IdolCost>81</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>719836</GoldCost>
 		<IdolCost>117</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1239978</GoldCost>
 		<IdolCost>143</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2068772</GoldCost>
 		<IdolCost>184</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5233,56 +5233,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1306458</GoldCost>
 		<IdolCost>146</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2148340</GoldCost>
 		<IdolCost>186</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5299,56 +5299,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1379643</GoldCost>
 		<IdolCost>150</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2234274</GoldCost>
 		<IdolCost>188</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5365,56 +5365,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Offensive</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1452827</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2320207</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5431,56 +5431,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1533911</GoldCost>
 		<IdolCost>158</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2413016</GoldCost>
 		<IdolCost>191</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5497,56 +5497,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Justice</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1614995</GoldCost>
 		<IdolCost>162</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2505824</GoldCost>
 		<IdolCost>193</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5563,56 +5563,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Justice</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1703688</GoldCost>
 		<IdolCost>166</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2606057</GoldCost>
 		<IdolCost>195</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5629,56 +5629,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Justice</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1792381</GoldCost>
 		<IdolCost>171</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2706290</GoldCost>
 		<IdolCost>197</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5695,56 +5695,56 @@
 		<Category>Vindication</Category>
 		<GoldCost>15229</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Justice</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35854</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>72000</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>75112</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>146739</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>272918</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>489969</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>856599</GoldCost>
 		<IdolCost>124</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1466375</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2332443</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5761,56 +5761,56 @@
 		<Category>Duelist</Category>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1989204</GoldCost>
 		<IdolCost>180</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5827,56 +5827,56 @@
 		<Category>Assault</Category>
 		<GoldCost>11107</GoldCost>
 		<IdolCost>6</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>27747</GoldCost>
 		<IdolCost>14</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>59872</GoldCost>
 		<IdolCost>30</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>119210</GoldCost>
 		<IdolCost>43</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>225210</GoldCost>
 		<IdolCost>57</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>408525</GoldCost>
 		<IdolCost>81</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>719836</GoldCost>
 		<IdolCost>117</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1239978</GoldCost>
 		<IdolCost>143</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2068772</GoldCost>
 		<IdolCost>184</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5893,56 +5893,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Crowd Control</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1306458</GoldCost>
 		<IdolCost>146</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2148340</GoldCost>
 		<IdolCost>186</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -5959,56 +5959,56 @@
 		<Category>Assault</Category>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1379643</GoldCost>
 		<IdolCost>150</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2234274</GoldCost>
 		<IdolCost>188</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6025,56 +6025,56 @@
 		<Category>Duelist</Category>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Crowd Control</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1452827</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2320207</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6091,56 +6091,56 @@
 		<Category>Shadow</Category>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1533911</GoldCost>
 		<IdolCost>158</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2413016</GoldCost>
 		<IdolCost>191</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6157,56 +6157,56 @@
 		<Category>Duelist</Category>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Blade</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1614995</GoldCost>
 		<IdolCost>162</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2505824</GoldCost>
 		<IdolCost>193</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6223,56 +6223,56 @@
 		<Category>Duelist</Category>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Blade</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1703688</GoldCost>
 		<IdolCost>166</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2606057</GoldCost>
 		<IdolCost>195</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6289,56 +6289,56 @@
 		<Category>Duelist</Category>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Blade</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1792381</GoldCost>
 		<IdolCost>171</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2706290</GoldCost>
 		<IdolCost>197</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6355,56 +6355,56 @@
 		<Category>Duelist</Category>
 		<GoldCost>15229</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Blade</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35854</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>72000</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>75112</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>146739</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>272918</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>489969</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>856599</GoldCost>
 		<IdolCost>124</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1466375</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2332443</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6421,56 +6421,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1989204</GoldCost>
 		<IdolCost>180</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6487,56 +6487,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>11107</GoldCost>
 		<IdolCost>6</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>27747</GoldCost>
 		<IdolCost>14</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>59872</GoldCost>
 		<IdolCost>30</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>119210</GoldCost>
 		<IdolCost>43</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>225210</GoldCost>
 		<IdolCost>57</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>408525</GoldCost>
 		<IdolCost>81</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>719836</GoldCost>
 		<IdolCost>117</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1239978</GoldCost>
 		<IdolCost>143</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2068772</GoldCost>
 		<IdolCost>184</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6553,56 +6553,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1306458</GoldCost>
 		<IdolCost>146</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2148340</GoldCost>
 		<IdolCost>186</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6619,56 +6619,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1379643</GoldCost>
 		<IdolCost>150</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2234274</GoldCost>
 		<IdolCost>188</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6685,56 +6685,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1452827</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2320207</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6751,56 +6751,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1533911</GoldCost>
 		<IdolCost>158</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2413016</GoldCost>
 		<IdolCost>191</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6817,56 +6817,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Death</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1614995</GoldCost>
 		<IdolCost>162</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2505824</GoldCost>
 		<IdolCost>193</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6883,56 +6883,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Death</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1703688</GoldCost>
 		<IdolCost>166</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2606057</GoldCost>
 		<IdolCost>195</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -6949,56 +6949,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Death</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1792381</GoldCost>
 		<IdolCost>171</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2706290</GoldCost>
 		<IdolCost>197</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7015,56 +7015,56 @@
 		<Category>Darkness</Category>
 		<GoldCost>15229</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Death</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35854</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>72000</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>75112</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>146739</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>272918</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>489969</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>856599</GoldCost>
 		<IdolCost>124</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1466375</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2332443</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7081,56 +7081,56 @@
 		<Category>Holy</Category>
 		<GoldCost>9990</GoldCost>
 		<IdolCost>5</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>25525</GoldCost>
 		<IdolCost>13</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>55488</GoldCost>
 		<IdolCost>28</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>111408</GoldCost>
 		<IdolCost>42</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>211572</GoldCost>
 		<IdolCost>55</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>384526</GoldCost>
 		<IdolCost>78</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>679864</GoldCost>
 		<IdolCost>115</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1173498</GoldCost>
 		<IdolCost>140</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1989204</GoldCost>
 		<IdolCost>180</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7147,56 +7147,56 @@
 		<Category>Holy</Category>
 		<GoldCost>11107</GoldCost>
 		<IdolCost>6</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>27747</GoldCost>
 		<IdolCost>14</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>59872</GoldCost>
 		<IdolCost>30</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>119210</GoldCost>
 		<IdolCost>43</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>225210</GoldCost>
 		<IdolCost>57</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>408525</GoldCost>
 		<IdolCost>81</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>719836</GoldCost>
 		<IdolCost>117</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1239978</GoldCost>
 		<IdolCost>143</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2068772</GoldCost>
 		<IdolCost>184</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7213,56 +7213,56 @@
 		<Category>Holy</Category>
 		<GoldCost>12224</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Survival</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>29968</GoldCost>
 		<IdolCost>15</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>64256</GoldCost>
 		<IdolCost>33</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>127012</GoldCost>
 		<IdolCost>44</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>238848</GoldCost>
 		<IdolCost>59</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>432524</GoldCost>
 		<IdolCost>85</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>759808</GoldCost>
 		<IdolCost>119</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1306458</GoldCost>
 		<IdolCost>146</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2148340</GoldCost>
 		<IdolCost>186</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7279,56 +7279,56 @@
 		<Category>Holy</Category>
 		<GoldCost>13567</GoldCost>
 		<IdolCost>7</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>32563</GoldCost>
 		<IdolCost>17</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>69044</GoldCost>
 		<IdolCost>35</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>136037</GoldCost>
 		<IdolCost>45</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>254251</GoldCost>
 		<IdolCost>61</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>458607</GoldCost>
 		<IdolCost>88</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>804044</GoldCost>
 		<IdolCost>121</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1379643</GoldCost>
 		<IdolCost>150</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2234274</GoldCost>
 		<IdolCost>188</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7345,56 +7345,56 @@
 		<Category>Holy</Category>
 		<GoldCost>14909</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35158</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>73831</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>145061</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>269653</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>484690</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>848280</GoldCost>
 		<IdolCost>123</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1452827</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2320207</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7411,56 +7411,56 @@
 		<Category>Holy</Category>
 		<GoldCost>16419</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Attack</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>38176</GoldCost>
 		<IdolCost>20</IdolCost>
-		<UpgradeTime>68400</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>79501</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>154805</GoldCost>
 		<IdolCost>48</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>286973</GoldCost>
 		<IdolCost>65</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>514014</GoldCost>
 		<IdolCost>95</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>897069</GoldCost>
 		<IdolCost>126</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1533911</GoldCost>
 		<IdolCost>158</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2413016</GoldCost>
 		<IdolCost>191</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7477,56 +7477,56 @@
 		<Category>Holy</Category>
 		<GoldCost>17929</GoldCost>
 		<IdolCost>9</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Life</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>41194</GoldCost>
 		<IdolCost>21</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>85170</GoldCost>
 		<IdolCost>38</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>164549</GoldCost>
 		<IdolCost>49</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>304292</GoldCost>
 		<IdolCost>67</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>543338</GoldCost>
 		<IdolCost>99</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>945857</GoldCost>
 		<IdolCost>128</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1614995</GoldCost>
 		<IdolCost>162</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2505824</GoldCost>
 		<IdolCost>193</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7543,56 +7543,56 @@
 		<Category>Holy</Category>
 		<GoldCost>19615</GoldCost>
 		<IdolCost>10</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Life</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>44516</GoldCost>
 		<IdolCost>23</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>91339</GoldCost>
 		<IdolCost>39</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>175706</GoldCost>
 		<IdolCost>50</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>323253</GoldCost>
 		<IdolCost>70</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>575613</GoldCost>
 		<IdolCost>104</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1000164</GoldCost>
 		<IdolCost>131</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1703688</GoldCost>
 		<IdolCost>166</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2606057</GoldCost>
 		<IdolCost>195</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7609,56 +7609,56 @@
 		<Category>Holy</Category>
 		<GoldCost>21301</GoldCost>
 		<IdolCost>11</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Life</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>47838</GoldCost>
 		<IdolCost>24</IdolCost>
-		<UpgradeTime>75600</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>97507</GoldCost>
 		<IdolCost>40</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>186863</GoldCost>
 		<IdolCost>52</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>342213</GoldCost>
 		<IdolCost>73</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>607888</GoldCost>
 		<IdolCost>108</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1054470</GoldCost>
 		<IdolCost>134</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1792381</GoldCost>
 		<IdolCost>171</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2706290</GoldCost>
 		<IdolCost>197</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>
@@ -7675,56 +7675,56 @@
 		<Category>Holy</Category>
 		<GoldCost>15229</GoldCost>
 		<IdolCost>8</IdolCost>
-		<UpgradeTime>43200</UpgradeTime>
+		<UpgradeTime>1800</UpgradeTime>
 		<Type>Life</Type>
 		<Rank>1</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>35854</GoldCost>
 		<IdolCost>18</IdolCost>
-		<UpgradeTime>72000</UpgradeTime>
+		<UpgradeTime>3600</UpgradeTime>
 		<Rank>2</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>75112</GoldCost>
 		<IdolCost>37</IdolCost>
-		<UpgradeTime>108000</UpgradeTime>
+		<UpgradeTime>57600</UpgradeTime>
 		<Rank>3</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>146739</GoldCost>
 		<IdolCost>46</IdolCost>
-		<UpgradeTime>172800</UpgradeTime>
+		<UpgradeTime>86400</UpgradeTime>
 		<Rank>4</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>272918</GoldCost>
 		<IdolCost>63</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>115200</UpgradeTime>
 		<Rank>5</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>489969</GoldCost>
 		<IdolCost>92</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>144000</UpgradeTime>
 		<Rank>6</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>856599</GoldCost>
 		<IdolCost>124</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>172800</UpgradeTime>
 		<Rank>7</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>1466375</GoldCost>
 		<IdolCost>154</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>201600</UpgradeTime>
 		<Rank>8</Rank>
 	</Ability>
 	<Ability>
 		<GoldCost>2332443</GoldCost>
 		<IdolCost>190</IdolCost>
-		<UpgradeTime>259200</UpgradeTime>
+		<UpgradeTime>230400</UpgradeTime>
 		<Rank>9</Rank>
 	</Ability>
 	<Ability>

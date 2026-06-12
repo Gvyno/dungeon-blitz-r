@@ -175,11 +175,29 @@ async function testRankTwoEggHatchCapsAtSevenDays(): Promise<void> {
     );
 }
 
+async function testRankOneEggHatchUsesThreeDays(): Promise<void> {
+    const client = createClient();
+    client.character.OwnedEggsID = [5];
+    const beforeStart = Math.floor(Date.now() / 1000);
+
+    await withMockedCharacterSave(async () => {
+        await PetHandler.handleEggHatch(client as never, createEggHatchPacket(0, false));
+    });
+
+    const readyTime = Number(client.character.EggHachery?.ReadyTime ?? 0);
+    assert.ok(readyTime >= beforeStart + (3 * 24 * 60 * 60));
+    assert.ok(
+        readyTime <= Math.floor(Date.now() / 1000) + (3 * 24 * 60 * 60) + 5,
+        'rank one rare/magic eggs should hatch in three days'
+    );
+}
+
 async function main(): Promise<void> {
     PetConfig.load(path.resolve(__dirname, '..', 'data'));
     await testPetTrainingWithGoldCanBeCollectedImmediately();
     await testEggHatchCannotBeCollectedBeforeReadyTimeAndRefreshesIdols();
     await testRankTwoEggHatchCapsAtSevenDays();
+    await testRankOneEggHatchUsesThreeDays();
     console.log('pet_timing_idol_regression: ok');
 }
 

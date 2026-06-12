@@ -19,7 +19,7 @@ export class PetConfig {
     static EGG_HATCH_MAX_TIME = 7 * 24 * 60 * 60;
     static EGG_HATCH_TIMES = {
         0: 259200, // 3 days
-        1: 518400, // 6 days
+        1: 259200, // 3 days
         2: 604800  // 7 days
     };
     static MAX_EGG_SLOTS = 8;

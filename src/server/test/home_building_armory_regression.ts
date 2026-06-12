@@ -305,7 +305,7 @@ async function testBuildingMutationBlockedAndOwnerStateReasserted(): Promise<voi
     assert.equal(ownerTower?.targetRank, 4, 'visited Home building refresh should reassert owner tower state');
 }
 
-async function testBuildingUpgradeTimeClampsToHalfDayMinimum(): Promise<void> {
+async function testBuildingUpgradeTimeUsesRankSchedule(): Promise<void> {
     const client = createOwnHomeClient('Builder');
     const before = Math.floor(Date.now() / 1000);
 
@@ -315,12 +315,12 @@ async function testBuildingUpgradeTimeClampsToHalfDayMinimum(): Promise<void> {
 
     const readyTime = Number(client.character.buildingUpgrade?.ReadyTime ?? 0);
     assert.ok(
-        readyTime >= before + (12 * 60 * 60),
-        'short home building upgrade timers should clamp to the half-day minimum'
+        readyTime >= before + (1 * 60 * 60),
+        'rank 2 home building upgrade should use the configured one-hour timer'
     );
     assert.ok(
-        readyTime <= Math.floor(Date.now() / 1000) + (12 * 60 * 60) + 5,
-        'rank 2 home building upgrade should not exceed the half-day minimum clamp'
+        readyTime <= Math.floor(Date.now() / 1000) + (1 * 60 * 60) + 5,
+        'rank 2 home building upgrade should not exceed the configured one-hour timer'
     );
 }
 
@@ -690,7 +690,7 @@ async function testArmoryUsesVisitedHomeHostInventory(): Promise<void> {
 async function main(): Promise<void> {
     testGuardDetectsOnlyOtherPlayersHome();
     await testBuildingMutationBlockedAndOwnerStateReasserted();
-    await testBuildingUpgradeTimeClampsToHalfDayMinimum();
+    await testBuildingUpgradeTimeUsesRankSchedule();
     testBuildingRefreshReassertsInactiveClassTowers();
     testBuildingRefreshKeepsVisitedOwnerInactiveClassTowers();
     testVisitedHomeEnterWorldMarksOwnerToken();
