@@ -16,7 +16,7 @@ function testStaticServerServesSingleSwfByDefault(): void {
     const selectedSwfUrl = (server as any).getSelectedSwfUrl() as string;
 
     assert.equal(path.basename(selectedSwfPath), 'DungeonBlitz.swf');
-    assert.equal(selectedSwfUrl, '/p/cbp/DungeonBlitz.swf?fv=cbw&gv=cbv');
+    assert.equal(selectedSwfUrl, '/p/cbp/DungeonBlitz.swf?fv=cbx&gv=cbv');
     assert.equal(fs.existsSync(selectedSwfPath), true);
 }
 
@@ -28,7 +28,7 @@ function testStaticServerCanonicalizesDirectSwfVersionParams(): void {
         socket: { remoteAddress: '127.0.0.1' }
     };
     const canonicalRequest = {
-        query: { fv: 'cbw', gv: 'cbv' },
+        query: { fv: 'cbx', gv: 'cbv' },
         headers: {},
         socket: { remoteAddress: '127.0.0.1' }
     };
@@ -37,7 +37,7 @@ function testStaticServerCanonicalizesDirectSwfVersionParams(): void {
     assert.equal((server as any).isCanonicalSelectedSwfRequest(canonicalRequest), true);
     assert.equal(
         (server as any).getCanonicalSelectedSwfUrl(staleRequest),
-        '/p/cbp/DungeonBlitz.swf?fv=cbw&gv=cbv&lang=tr'
+        '/p/cbp/DungeonBlitz.swf?fv=cbx&gv=cbv&lang=tr'
     );
 }
 
